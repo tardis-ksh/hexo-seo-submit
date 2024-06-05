@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "prepare": "husky",
+    "format": "prettier --write 'src/**/*.{ts,js,json,md}'"
   },
   "keywords": [],
   "author": "tardis <kshao666@gmail.com> (https://ksh7.com)",
@@ -11,7 +13,15 @@
   "description": "a sso plugin for hexo",
   "packageManager": "pnpm@9.1.4",
   "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "husky": "^9.0.11",
+    "lint-staged": "^12.0.0",
+    "prettier": "^3.3.0",
     "tsup": "^8.1.0",
     "typescript": "^5.4.5"
+  },
+  "lint-staged": {
+    "src/*.{ts,js,json,md}": "prettier --write src"
   }
 }
