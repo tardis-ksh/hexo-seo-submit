@@ -1,0 +1,17 @@
+{
+  "name": "hexo-seo-submit",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsup"
+  },
+  "keywords": [],
+  "author": "tardis <kshao666@gmail.com> (https://ksh7.com)",
+  "license": "MIT",
+  "description": "a sso plugin for hexo",
+  "packageManager": "pnpm@9.1.4",
+  "devDependencies": {
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5"
+  }
+}
