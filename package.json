@@ -1,27 +1,39 @@
 {
   "name": "hexo-seo-submit",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsup",
     "prepare": "husky",
-    "format": "prettier --write 'src/**/*.{ts,js,json,md}'"
+    "format": "prettier --write 'src/**/*.{ts,js,json,md}'",
+    "lint": "eslint"
   },
   "keywords": [],
   "author": "tardis <kshao666@gmail.com> (https://ksh7.com)",
   "license": "MIT",
-  "description": "a sso plugin for hexo",
+  "description": "a seo plugin for hexo, submit your site to search engines(google, bing, baidu, etc.)",
   "packageManager": "pnpm@9.1.4",
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@eslint/js": "^9.4.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.14.2",
+    "@typescript-eslint/parser": "^7.12.0",
+    "eslint": "^9.4.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "globals": "^15.3.0",
     "husky": "^9.0.11",
     "lint-staged": "^12.0.0",
     "prettier": "^3.3.0",
     "tsup": "^8.1.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.12.0"
   },
   "lint-staged": {
-    "src/*.{ts,js,json,md}": "prettier --write src"
+    "src/*.{ts,js,json,md}": [
+      "pnpm run format",
+      "pnpm run lint"
+    ]
   }
 }

@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsup'
+import { defineConfig } from 'tsup';
 
 export default defineConfig({
   entry: ['src/index.ts'],
@@ -10,5 +10,5 @@ export default defineConfig({
   target: 'es6',
   splitting: false, // 禁用代码拆分
   bundle: true, // 启用代码打包
-  outDir: 'dist'
-})
+  outDir: 'dist',
+});
