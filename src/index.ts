@@ -1,17 +1,29 @@
-import { SearchEngines } from '@/constants';
+import chalk from 'chalk';
+
+import { baiduGenerators } from '@/generators';
+
+import { PLUGIN_NAME, SearchEngines } from '@/constants';
 import { SeoHexoConfig } from '@/types';
 
-import generators from '@/generators';
+console.log(chalk.magenta(`${PLUGIN_NAME} run, have fun!`));
 
-const DefaultConfig: SeoHexoConfig = {
-  [SearchEngines.BAIDU]: { enable: true },
-  [SearchEngines.BING]: { enable: true },
-  [SearchEngines.GOOGLE]: { enable: true },
+const SearchEngineConfig = {
+  enable: false,
 };
 
-hexo.config['hexo-seo-submit'] = Object.assign(
+const DefaultConfig: SeoHexoConfig = {
+  [SearchEngines.BAIDU]: SearchEngineConfig,
+  [SearchEngines.BING]: SearchEngineConfig,
+  [SearchEngines.GOOGLE]: SearchEngineConfig,
+};
+
+console.log(hexo.config[PLUGIN_NAME], 'log kshao-1');
+
+hexo.config[PLUGIN_NAME] = Object.assign(
   DefaultConfig,
-  hexo.config['hexo-seo-submit'],
+  hexo.config[PLUGIN_NAME],
 );
 
-hexo.extend.generator.register('hexo-seo-submit-generator', generators);
+console.log(hexo.config[PLUGIN_NAME], 'log kshao-2');
+
+hexo.extend.generator.register('hexo-seo-submit-generator', baiduGenerators);

@@ -36,6 +36,7 @@ type IHexo = Hexo & {
     tags: Model<Hexo.Locals.Tag>;
     data: { [key: string]: never };
   };
+  Posts: Hexo.Locals.Post[];
   Return: Hexo.extend.Generator.Return;
 };
 
