@@ -9,7 +9,7 @@ export const checkSearchEngineConfig = (config: SearchEngineConfig) =>
 
     const { enable } = config;
 
-    if (!enable) {
+    if (typeof enable !== 'boolean' || !enable) {
       reject(new Error('exit~ this engine is not enabled'));
       return;
     }

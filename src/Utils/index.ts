@@ -11,6 +11,7 @@ import {
 import Hexo from '@/types/hexo';
 import { SeoHexoConfig } from '@/types';
 
+// 根据字段降序
 export const descendingOrderPosts = (data: Hexo['Posts'], sortBy: SortBy) => {
   const nextData = data?.slice() || [];
   return nextData?.sort((a, b) => {
@@ -18,27 +19,32 @@ export const descendingOrderPosts = (data: Hexo['Posts'], sortBy: SortBy) => {
   });
 };
 
+// 根据 count 获取 post urls
 export const getPostUrls = (
   posts: Hexo['Site']['posts'],
-  seoConfig: SeoHexoConfig[SearchEngines],
+  searchEnginConfig: SeoHexoConfig[SearchEngines],
 ) => {
   let nextPosts = posts.toArray()?.slice() || [];
 
   nextPosts = nextPosts?.map((post) => {
-    const { date, updated } = post;
+    const { date, updated, permalink } = post;
     return {
-      ...post,
-      date: Date.parse(date.format('yyyy-MM-DD HH:mm:ss')),
-      updated: Date.parse(updated.format('yyyy-MM-DD HH:mm:ss')),
+      permalink,
+      [SortBy.CREATED]: Date.parse(date.format('yyyy-MM-DD HH:mm:ss')),
+      [SortBy.UPDATED]: Date.parse(updated.format('yyyy-MM-DD HH:mm:ss')),
     };
   });
 
-  const { sortBy = SortBy.CREATED, count } = seoConfig || {};
+  const { sortBy, count } = searchEnginConfig || {};
+  // get sortBy、count from root config
+  const seoConfig = hexo.config[PLUGIN_NAME] as SeoHexoConfig;
 
   const postUrls = descendingOrderPosts(
-    nextPosts?.slice(0, count || undefined),
-    sortBy,
-  )?.map((post) => post.permalink);
+    nextPosts,
+    sortBy || seoConfig.sortBy || SortBy.CREATED,
+  )
+    ?.slice(0, count || seoConfig.count || undefined)
+    ?.map((post) => post.permalink);
 
   return postUrls?.join('\n');
 };
