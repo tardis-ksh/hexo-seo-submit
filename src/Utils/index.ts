@@ -58,8 +58,8 @@ export const getSearchEngineConfig = <
       chalk.bgRed(`${PLUGIN_NAME}: wrong search engine config, please check`),
     );
 
-    return { enable: false } as SeoHexoConfig[T];
+    return {} as SeoHexoConfig[T];
   }
 
-  return config;
+  return (config || {}) as SeoHexoConfig[T];
 };
