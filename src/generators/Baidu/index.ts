@@ -7,7 +7,7 @@ import { checkSearchEngineConfig } from '@/Utils/checkValid';
 
 const moduleName = `${PLUGIN_NAME}[${SearchEngines.BAIDU}]engine`;
 
-const baiduGenerators = async (local: Hexo['Site']): Hexo['Return'] => {
+const baiduGenerator = async (local: Hexo['Site']): Hexo['Return'] => {
   console.log(chalk.bgGreen(`${moduleName}: generator running`));
 
   const searchConfig = getSearchEngineConfig<SearchEngines.BAIDU>(
@@ -21,10 +21,10 @@ const baiduGenerators = async (local: Hexo['Site']): Hexo['Return'] => {
     return undefined;
   }
 
-  const { path = 'baidu.txt', ...seoConfig } = searchConfig;
+  const { path = 'baidu.txt', ...restSearchEngineConfig } = searchConfig;
 
   const result = {
-    data: getPostUrls(local.posts, seoConfig),
+    data: getPostUrls(local.posts, restSearchEngineConfig),
     path: combineFilePath(path),
   };
 
@@ -40,4 +40,4 @@ const baiduGenerators = async (local: Hexo['Site']): Hexo['Return'] => {
   return result;
 };
 
-export default baiduGenerators;
+export default baiduGenerator;
