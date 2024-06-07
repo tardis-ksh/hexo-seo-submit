@@ -1,11 +1,11 @@
 import chalk from 'chalk';
 
-import { baiduGenerators } from '@/generators';
+import { baiduGenerator, bingGenerator } from '@/generators';
 
 import { PLUGIN_NAME, SearchEngines } from '@/constants';
 import { SeoHexoConfig } from '@/types';
 
-console.log(chalk.magenta(`${PLUGIN_NAME} run, have fun!`));
+console.log(chalk.bold.bgMagenta(`${PLUGIN_NAME} run, have fun!`));
 
 const SearchEngineConfig = {
   enable: false,
@@ -26,4 +26,14 @@ hexo.config[PLUGIN_NAME] = Object.assign(
 
 console.log(hexo.config[PLUGIN_NAME], 'log kshao-2');
 
-hexo.extend.generator.register('hexo-seo-submit-generator', baiduGenerators);
+// baidu engine generator
+hexo.extend.generator.register(
+  `${PLUGIN_NAME}[${SearchEngines.BAIDU}] generator`,
+  baiduGenerator,
+);
+
+// bing engine generator
+hexo.extend.generator.register(
+  `${PLUGIN_NAME}[${SearchEngines.BING}] generator`,
+  bingGenerator,
+);
