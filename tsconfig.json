@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+//    "baseUrl": "./",
+    "target": "esnext",
+    "module": "commonjs",
+    "sourceMap": true,
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    // 生成 .d.ts 文件
+    "declaration": true,
+    // 启用对 ES 模块语法的互操作性
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+  },
+  "include": ["src/**/*", "*.ts", "*.d.ts"],
+  "exclude": ["node_modules", "dist"]
+}

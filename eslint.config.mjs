@@ -29,7 +29,7 @@ const flatConfigs = [
     ignores: ['dist', 'node_modules'],
   },
   {
-    files: ['src/**/*.ts', './*.{ts,js}'],
+    files: ['src/**/*.ts', '*.{ts,js}'],
   },
   {
     rules: {
