@@ -1,13 +1,17 @@
-import * as path from 'node:path';
+import { SearchEngines } from '@/constants';
+import { SeoHexoConfig } from '@/types';
 
-const fn = (params: string) => {
-  console.log(params, path);
-  return 123;
+import generators from '@/generators';
+
+const DefaultConfig: SeoHexoConfig = {
+  [SearchEngines.BAIDU]: { enable: true },
+  [SearchEngines.BING]: { enable: true },
+  [SearchEngines.GOOGLE]: { enable: true },
 };
 
-const testFunc = (props) => {
-  console.log(props, fn('132'));
-  return 'Hello World';
-};
+hexo.config['hexo-seo-submit'] = Object.assign(
+  DefaultConfig,
+  hexo.config['hexo-seo-submit'],
+);
 
-export default testFunc;
+hexo.extend.generator.register('hexo-seo-submit-generator', generators);
