@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 
-import { baiduGenerator, bingGenerator } from '@/generators';
+import { baiduGenerator, bingGenerator, googleGenerator } from '@/generators';
 
 import { PLUGIN_NAME, SearchEngines } from '@/constants';
 import { SeoHexoConfig } from '@/types';
@@ -36,4 +36,10 @@ hexo.extend.generator.register(
 hexo.extend.generator.register(
   `${PLUGIN_NAME}[${SearchEngines.BING}] generator`,
   bingGenerator,
+);
+
+// google engine generator
+hexo.extend.generator.register(
+  `${PLUGIN_NAME}[${SearchEngines.GOOGLE}] generator`,
+  googleGenerator,
 );
