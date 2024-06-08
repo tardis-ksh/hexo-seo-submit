@@ -33,12 +33,10 @@ const flatConfigs = [
   },
   {
     rules: {
+      '@typescript-eslint/no-explicit-any': 'warn',
       // 'prettier/prettier': 'warn',
     },
   },
 ];
 
-export default tsEslint.config(
-  ...tsEslint.configs.recommended,
-  ...flatConfigs,
-);
+export default tsEslint.config(...tsEslint.configs.recommended, ...flatConfigs);

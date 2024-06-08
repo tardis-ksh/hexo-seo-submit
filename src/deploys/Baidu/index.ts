@@ -1,12 +1,12 @@
 import nodePath from 'node:path';
 import fsp from 'node:fs/promises';
+import chalk from 'chalk';
 
 import { submitUrlToEngine } from '@/services/baidu';
 
 import { SeoHexoConfig } from '@/types';
 import { SearchEngines } from '@/constants';
 import { combineFilePath, getSiteDomain } from '@/Utils';
-import chalk from 'chalk';
 
 const baiduDeploys = async (
   searchEngineConfig: SeoHexoConfig[SearchEngines.BAIDU],
