@@ -31,7 +31,9 @@ const baiduDeploys = async (
       `${SearchEngines.BAIDU}: success ${response?.data.success}; ${response?.data.remain} remain`,
     );
   } catch (error) {
-    return Promise.reject(new Error(error?.response.data.message || error.message));
+    return Promise.reject(
+      new Error(error?.response.data.message || error.message),
+    );
   }
 };
 

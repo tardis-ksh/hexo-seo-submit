@@ -49,7 +49,7 @@ const deploys = async (local: Hexo) => {
       } else {
         throw new Error(result.reason);
       }
-    })
+    });
   } catch (error) {
     console.log(chalk.bgRed(`${moduleName} ${error.message}`));
   }
