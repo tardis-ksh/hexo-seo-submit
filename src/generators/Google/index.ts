@@ -21,7 +21,7 @@ const googleGenerator = async (local: Hexo['Site']): Hexo['Return'] => {
     return undefined;
   }
 
-  const { path = 'google.txt', ...restSearchEngineConfig } = searchConfig;
+  const { path, ...restSearchEngineConfig } = searchConfig;
 
   const result = {
     data: getPostUrls(local.posts, restSearchEngineConfig),
