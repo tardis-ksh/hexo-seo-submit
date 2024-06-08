@@ -69,3 +69,7 @@ export const getSearchEngineConfig = <
 
   return (config || {}) as SeoHexoConfig[T];
 };
+
+export const getSiteDomain = () => {
+  return hexo.config.url;
+};

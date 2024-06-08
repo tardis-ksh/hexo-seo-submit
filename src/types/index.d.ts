@@ -20,10 +20,9 @@ interface DiffEngineConfig {
     apiKey?: string;
   };
   [SearchEngines.GOOGLE]: {
-    // google index key
-    privateKey?: string;
-    // google client emall
-    clientEmail?: string;
+    // google service accounts key json path
+    // use in deploy, you can save anywhere in you project, but no public
+    accountKeysJSon?: string;
   };
 }
 

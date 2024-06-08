@@ -2,7 +2,7 @@ import { SearchEngineConfig } from '@/types';
 
 export const checkSearchEngineConfig = (config: SearchEngineConfig) =>
   new Promise((resolve, reject) => {
-    if (!Object.keys(config).length) {
+    if (!Object.keys(config || {}).length) {
       reject(new Error('exit~ can not find any config'));
       return;
     }
