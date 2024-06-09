@@ -1,4 +1,5 @@
 import path from 'node:path';
+import fsp from 'node:fs/promises';
 
 import chalk from 'chalk';
 
@@ -73,4 +74,8 @@ export const getSearchEngineConfig = <
 
 export const getSiteDomain = () => {
   return hexo.config.url;
+};
+
+export const getFileContent = async (filePath) => {
+  return await fsp.readFile(path.join(process.cwd(), filePath), 'utf8');
 };

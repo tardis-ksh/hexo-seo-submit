@@ -1,0 +1,2 @@
+https://ksh7.com/posts/npm-registry/
+https://ksh7.com/posts/workspace-pnpm-turborepo-changesets/
