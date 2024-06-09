@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+export const REQUEST_TIMEOUT = 5000;
+
 const instance = axios.create({
-  timeout: 2000,
+  timeout: REQUEST_TIMEOUT,
   paramsSerializer: {},
 });
 

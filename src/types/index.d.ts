@@ -22,8 +22,14 @@ interface DiffEngineConfig {
   [SearchEngines.GOOGLE]: {
     // google service accounts key json path
     // use in deploy, you can save anywhere in you project, but no public
-    accountKeysJSon?: string;
+    accountKeysJSonFile?: string;
+    proxy?: string;
   };
+}
+
+export interface GoogleAccountKeysJson {
+  private_key: string;
+  client_email: string;
 }
 
 export type SeoHexoConfig = {
