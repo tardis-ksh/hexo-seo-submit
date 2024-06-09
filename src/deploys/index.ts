@@ -1,6 +1,7 @@
 import chalk from 'chalk';
 
 import baiduDeploys from '@/deploys/Baidu';
+import bingDeploys from '@/deploys/Bing';
 
 import Hexo from '@/types/hexo';
 import { PLUGIN_NAME, SearchEngines } from '@/constants';
@@ -33,6 +34,7 @@ const deploys = async (local: Hexo) => {
 
   const searchRequestMap = {
     [SearchEngines.BAIDU]: baiduDeploys,
+    [SearchEngines.BING]: bingDeploys,
   };
 
   const requestQueue = searchEngineConfigs.map(async (config) => {

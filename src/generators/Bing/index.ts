@@ -2,7 +2,7 @@ import chalk from 'chalk';
 
 import Hexo from '@/types/hexo';
 import { combineFilePath, getPostUrls, getSearchEngineConfig } from '@/Utils';
-import { PLUGIN_NAME, SearchEngines } from '@/constants';
+import { CONTENT_SEPARATOR, PLUGIN_NAME, SearchEngines } from '@/constants';
 import { checkSearchEngineConfig } from '@/Utils/checkValid';
 
 const moduleName = `${PLUGIN_NAME}[${SearchEngines.BING}]engine`;
@@ -37,7 +37,7 @@ const bingGenerator = async (local: Hexo['Site']): Hexo['Return'] => {
   const bingConfig = {
     data: JSON.stringify({
       siteUrl: hexo.config.url,
-      urlList: result.data.split('\n'),
+      urlList: result.data.split(CONTENT_SEPARATOR),
     }),
     path: combineFilePath(path),
   };

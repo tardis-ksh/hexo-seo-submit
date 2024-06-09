@@ -3,6 +3,7 @@ import path from 'node:path';
 import chalk from 'chalk';
 
 import {
+  CONTENT_SEPARATOR,
   FILE_ROOT_PATH,
   PLUGIN_NAME,
   SearchEngines,
@@ -46,7 +47,7 @@ export const getPostUrls = (
     ?.slice(0, count || seoConfig.count || undefined)
     ?.map((post) => post.permalink);
 
-  return postUrls?.join('\n');
+  return postUrls?.join(CONTENT_SEPARATOR);
 };
 
 export const combineFilePath = (filePath: string) => {

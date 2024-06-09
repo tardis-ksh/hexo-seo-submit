@@ -28,11 +28,11 @@ const baiduDeploys = async (
     });
 
     return Promise.resolve(
-      `${SearchEngines.BAIDU}: success ${response?.data.success}; ${response?.data.remain} remain`,
+      `${SearchEngines.BAIDU}: success ${response?.data?.success}; ${response?.data?.remain} remain`,
     );
   } catch (error) {
     return Promise.reject(
-      new Error(error?.response.data.message || error.message),
+      new Error(error.response?.data?.message || error.message),
     );
   }
 };
