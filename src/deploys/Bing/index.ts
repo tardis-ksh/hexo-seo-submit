@@ -40,7 +40,7 @@ const bingDeploys = async (
 
     return Promise.resolve(`${SearchEngines.BING}: push success`);
   } catch (error) {
-    return Promise.reject(new Error(error?.response?.data?.message || error.message));
+    return Promise.reject(new Error(error?.response?.data || error.message));
   }
 };
 
