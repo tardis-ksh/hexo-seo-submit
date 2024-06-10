@@ -1,0 +1,25 @@
+# in your root _config.yml
+hexo-seo-submit:
+  sortBy: updated # created | updated, default created
+  count: 5 # set all engine count
+  fileRootPath: hexo-seo-submit # will generate in root/public/fileRootPath, default '', root/public/
+  baidu:
+    enable: true # default false
+    path: baidu-url.txt # default path: root/public/hexo-seo-submit/baidu-url.txt
+    sortBy: updated
+    count: 3
+    token: you baidu token
+
+  google:
+    enable: true
+    path: google-url.txt
+    # find path in root
+    accountKeysJSonFile: google.json  # path.join(process.cwd(), path)
+    count: 2
+    # maybe required
+    proxy: http://127.0.0.1:7890
+  bing:
+    enable: true
+    apiKey: your bing api key
+    sortBy: created
+    path: bing.json
