@@ -8,6 +8,8 @@ import { PLUGIN_NAME, SearchEngines } from '@/constants';
 import { getFileContent } from '@/Utils';
 import { submitUrlToEngine as baiduSubmitUrlToEngine } from '@/services/baidu';
 import { submitUrlToEngine as bingSubmitUrlToEngine } from '@/services/bing';
+import googleBatchSubmit from '@/deploys/Google/batchSubmit';
+import type { BatchSubmitConfig } from '@/deploys/Google/type';
 
 const packageJsonContent = fs.readFileSync(
   nodePath.join(process.cwd(), 'package.json'),
@@ -41,9 +43,7 @@ program
         ),
       );
     } catch (error) {
-      console.error(
-        chalk.bgRed(error.response?.data?.message || error.message),
-      );
+      console.log(chalk.bgRed(error.response?.data?.message || error.message));
     }
   });
 
@@ -63,12 +63,13 @@ program
       });
       console.log(chalk.bgGreen('push success'));
     } catch (error) {
-      console.error(chalk.bgRed(error?.response?.data || error.message));
+      console.log(chalk.bgRed(error?.response?.data || error.message));
     }
   });
 
 program
   .command(SearchEngines.GOOGLE)
+  .argument('[]')
   .requiredOption('-f, --file <file>', 'url file path.')
   .option(
     '-p, --proxy <proxy>',
@@ -82,12 +83,46 @@ program
   .option(
     '-kf, --accountKeysJSonFile <accountKeysJSonFile>',
     'accountKeysJSonFile path',
-  );
-  // .action((_, options) => {
-  //   const { accountKeysJSonFile, client_email, private_key, proxy, file } =
-  //     options;
-  //   try {
-  //   } catch (error) {}
-  // });
+  )
+  .action(async (_, options) => {
+    const { accountKeysJSonFile, client_email, private_key, proxy, file } =
+      options;
+
+    if (!accountKeysJSonFile && !(client_email && private_key)) {
+      console.log(chalk.bgRed('error: miss credentials'));
+      return;
+    }
+
+    try {
+      const submitConfig: Partial<BatchSubmitConfig> = {};
+      // use props
+      if (client_email && private_key) {
+        submitConfig.accountKeysJSon = JSON.stringify({
+          client_email,
+          private_key,
+        });
+      } else {
+        submitConfig.accountKeysJSonFile = accountKeysJSonFile;
+      }
+
+      const response = await googleBatchSubmit({
+        file: nodePath.join(process.cwd(), file),
+        ...submitConfig,
+        proxy,
+      });
+
+      if (response?.data?.includes(200)) {
+        console.log(chalk.bgGreen('push success'));
+      } else {
+        console.log(chalk.bgRed(`failed ${response?.data}`));
+      }
+    } catch (error) {
+      console.log(
+        chalk.bgRed(
+          `google error: ${error?.response?.data.error.message || error.message}`,
+        ),
+      );
+    }
+  });
 
 program.parse();
