@@ -39,4 +39,5 @@ export type SeoHexoConfig = {
   count?: number;
   // 排序字段
   sortBy?: SortBy;
+  fileRootPath?: string;
 };

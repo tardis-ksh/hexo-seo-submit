@@ -52,7 +52,8 @@ export const getPostUrls = (
 };
 
 export const combineFilePath = (filePath: string) => {
-  return path.join(FILE_ROOT_PATH, filePath);
+  const pluginConfig = hexo.config[PLUGIN_NAME] as SeoHexoConfig;
+  return path.join(pluginConfig.fileRootPath ?? FILE_ROOT_PATH, filePath);
 };
 
 export const getSearchEngineConfig = <

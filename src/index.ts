@@ -15,6 +15,7 @@ const SearchEngineConfig = {
 };
 
 const DefaultConfig: SeoHexoConfig = {
+  fileRootPath: '',
   [SearchEngines.BAIDU]: {
     ...SearchEngineConfig,
     path: 'baidu.txt',
@@ -29,11 +30,11 @@ const DefaultConfig: SeoHexoConfig = {
   },
 };
 
-console.log(hexo.config[PLUGIN_NAME], 'log kshao-1');
+// console.log(hexo.config[PLUGIN_NAME], 'log kshao-1');
 
 hexo.config[PLUGIN_NAME] = merge({}, DefaultConfig, hexo.config[PLUGIN_NAME]);
 
-console.log(hexo.config[PLUGIN_NAME], 'log kshao-2');
+// console.log(hexo.config[PLUGIN_NAME], 'log kshao-2');
 
 // baidu engine generator
 hexo.extend.generator.register(
