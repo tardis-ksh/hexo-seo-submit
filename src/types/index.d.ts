@@ -1,4 +1,4 @@
-import { SearchEngines, SortBy } from '@/constants';
+import { CIPlatform, SearchEngines, SortBy } from '@/constants';
 
 export interface SearchEngineConfig {
   enable?: boolean;
@@ -32,6 +32,12 @@ export interface GoogleAccountKeysJson {
   client_email: string;
 }
 
+export interface CIConfig {
+  enable?: true;
+  cron?: string;
+  platform?: CIPlatform;
+}
+
 export type SeoHexoConfig = {
   [key in SearchEngines]: SearchEngineConfig & DiffEngineConfig[key];
 } & {
@@ -40,4 +46,5 @@ export type SeoHexoConfig = {
   // 排序字段
   sortBy?: SortBy;
   fileRootPath?: string;
+  CI?: CIConfig;
 };

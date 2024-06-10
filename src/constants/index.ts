@@ -6,6 +6,11 @@ export enum SearchEngines {
   GOOGLE = 'google',
 }
 
+export enum CIPlatform {
+  GITHUB = 'github',
+  CODING = 'coding',
+}
+
 export enum SortBy {
   UPDATED = 'updated',
   CREATED = 'created',

@@ -1,10 +1,15 @@
 import chalk from 'chalk';
 import merge from 'lodash.merge';
 
-import { baiduGenerator, bingGenerator, googleGenerator } from '@/generators';
+import {
+  baiduGenerator,
+  bingGenerator,
+  googleGenerator,
+  CIGenerators,
+} from '@/generators';
 import deploys from '@/deploys';
 
-import { PLUGIN_NAME, SearchEngines } from '@/constants';
+import { CIPlatform, PLUGIN_NAME, SearchEngines } from '@/constants';
 import { SeoHexoConfig } from '@/types';
 import IHexo from '@/types/hexo';
 
@@ -16,6 +21,11 @@ const SearchEngineConfig = {
 
 const DefaultConfig: SeoHexoConfig = {
   fileRootPath: '',
+  CI: {
+    enable: true,
+    platform: CIPlatform.GITHUB,
+    cron: '0 4 * * *',
+  },
   [SearchEngines.BAIDU]: {
     ...SearchEngineConfig,
     path: 'baidu.txt',
@@ -53,6 +63,9 @@ hexo.extend.generator.register(
   `${PLUGIN_NAME}[${SearchEngines.GOOGLE}] generator`,
   googleGenerator,
 );
+
+// CI generator
+hexo.extend.generator.register(`${PLUGIN_NAME}[CI] generator`, CIGenerators);
 
 // batch deployer
 hexo.extend.deployer.register(PLUGIN_NAME, async () => {
