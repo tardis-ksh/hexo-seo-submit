@@ -19,6 +19,7 @@ const baseConfig: Partial<Options> = {
     };
   },
   treeshake: true,
+  onSuccess: 'cpx "src/handlebars/template/*" dist/handlebars/template',
 };
 
 export default defineConfig([
