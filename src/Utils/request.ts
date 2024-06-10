@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const REQUEST_TIMEOUT = 5000;
+export const REQUEST_TIMEOUT = 20000;
 
 const instance = axios.create({
   timeout: REQUEST_TIMEOUT,
