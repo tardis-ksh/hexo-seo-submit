@@ -1,4 +1,13 @@
-# 0.1.0 (2024-06-11)
+# [0.2.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.1.0...v0.2.0) (2024-06-11)
+
+
+### Features
+
+* change text ([128f0cc](https://github.com/tardis-ksh/hexo-seo-submit/commit/128f0cce21da2be2ccb4b6dbc51cd5139c0fca14))
+
+
+
+# [0.1.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/9854863b2d2690726ee610126c61e65eca76a1f3...v0.1.0) (2024-06-11)
 
 
 ### Features
