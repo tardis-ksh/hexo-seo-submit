@@ -43,7 +43,7 @@ program
         ),
       );
     } catch (error) {
-      console.log(chalk.bgRed(error.response?.data?.message || error.message));
+      console.error(error.response?.data?.message || error.message);
     }
   });
 
@@ -63,7 +63,7 @@ program
       });
       console.log(chalk.bgGreen('push success'));
     } catch (error) {
-      console.log(chalk.bgRed(error?.response?.data || error.message));
+      console.error(error?.response?.data || error.message);
     }
   });
 
@@ -89,12 +89,13 @@ program
       options;
 
     if (!accountKeysJSonFile && !(client_email && private_key)) {
-      console.log(chalk.bgRed('error: miss credentials'));
+      console.log('error: miss credentials');
       return;
     }
 
     try {
       const submitConfig: Partial<BatchSubmitConfig> = {};
+      console.log(private_key, 'private_key');
       // use props
       if (client_email && private_key) {
         submitConfig.accountKeysJSon = JSON.stringify({
@@ -114,13 +115,11 @@ program
       if (response?.data?.includes(200)) {
         console.log(chalk.bgGreen('push success'));
       } else {
-        console.log(chalk.bgRed(`failed ${response?.data}`));
+        console.log(`failed ${response?.data}`);
       }
     } catch (error) {
       console.log(
-        chalk.bgRed(
-          `google error: ${error?.response?.data.error.message || error.message}`,
-        ),
+        `google error: ${error?.response?.data.error.message || error.message}`,
       );
     }
   });

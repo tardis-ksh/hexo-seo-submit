@@ -35,6 +35,7 @@ export interface GoogleAccountKeysJson {
 export interface CIConfig {
   enable?: true;
   cron?: string;
+  branch?: string;
   platform?: CIPlatform;
 }
 

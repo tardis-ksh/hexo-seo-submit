@@ -25,6 +25,7 @@ const DefaultConfig: SeoHexoConfig = {
     enable: true,
     platform: CIPlatform.GITHUB,
     cron: '0 4 * * *',
+    branch: 'master',
   },
   [SearchEngines.BAIDU]: {
     ...SearchEngineConfig,

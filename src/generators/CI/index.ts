@@ -7,7 +7,7 @@ import generateTemplate from '@/handlebars';
 import Hexo from '@/types/hexo';
 import { CIPlatform, PLUGIN_NAME, SearchEngines } from '@/constants';
 import { SeoHexoConfig } from '@/types';
-import { combineFilePath } from '@/Utils';
+import { combineFilePath, getSiteDomain } from '@/Utils';
 
 const moduleName = `${PLUGIN_NAME}[CI]:`;
 const getTemplateContent = async (path) => {
@@ -22,7 +22,7 @@ const CIGenerators = async (): Hexo['Return'] => {
   }
   console.log(chalk.bgGreen(`${moduleName} running.`));
 
-  const { cron } = CIConfig;
+  const { cron, branch } = CIConfig;
   const searchEngineConfig = Object.values(SearchEngines)
     .map((key) => {
       return {
@@ -56,8 +56,10 @@ const CIGenerators = async (): Hexo['Return'] => {
       schedule: {
         cron,
       },
+      site: getSiteDomain(),
       path: `.github/workflows/${PLUGIN_NAME}.yml`,
       templateFile: await getTemplateContent('handlebars/template/actions.tpl'),
+      branch,
       ...searchEngineConfig,
     },
   };
