@@ -1,4 +1,4 @@
-name: Hexo SEO Auto Push
+name: Hexo Seo Submit
 on:
   schedule:
     - cron: {{ schedule.cron }}
@@ -7,13 +7,12 @@ on:
       - {{ branch }}
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: {{{raw "${{ github.workflow }}-${{ github.ref }}"}}}
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id || github.event_name == 'schedule'
     steps:
       - uses: actions/checkout@main
       - uses: actions/setup-node@main
@@ -59,5 +58,5 @@ jobs:
       - name: push search engine {{ google.name }}
         if: env.is_owner
         run: |
-          npx hexo-seo-submit {{ google.name }} -f {{ google.file }} -mail {{{raw "${{ secrets.client_email }}"}}} -key "{{{raw "${{ secrets.private_key }}"}}}"
+          npx hexo-seo-submit {{ google.name }} -f {{ google.file }} -mail {{{raw "${{ secrets.google_client_email }}"}}} -key "{{{raw "${{ secrets.google_private_key }}"}}}"
       {{/if}}
