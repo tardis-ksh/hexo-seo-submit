@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.3.0...v0.4.0) (2024-06-11)
+
+
+### Features
+
+* update template ([1435e65](https://github.com/tardis-ksh/hexo-seo-submit/commit/1435e655c61534fe4de8a4e7b488d48a88838ead))
+
+
+
 # [0.3.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.2.0...v0.3.0) (2024-06-11)
 
 
