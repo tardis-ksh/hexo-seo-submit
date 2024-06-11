@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
@@ -34,7 +34,7 @@ jobs:
             echo "is_owner=false" >> $GITHUB_ENV
           fi
         env:
-          GITHUB_EVENT_PATH: {{{raw ${{ github.event_path }}"}}}
+          GITHUB_EVENT_PATH: {{{raw "${{ github.event_path }}"}}}
 
       - run: |
           npm init -y
