@@ -44,6 +44,7 @@ program
       );
     } catch (error) {
       console.error(error.response?.data?.message || error.message);
+      process.exit(1);
     }
   });
 
@@ -64,6 +65,7 @@ program
       console.log(chalk.bgGreen('push success'));
     } catch (error) {
       console.error(error?.response?.data || error.message);
+      process.exit(1);
     }
   });
 
@@ -89,7 +91,8 @@ program
       options;
 
     if (!accountKeysJSonFile && !(client_email && private_key)) {
-      console.log('error: miss credentials');
+      console.error('error: miss credentials');
+      process.exit(1);
       return;
     }
 
@@ -115,7 +118,8 @@ program
       if (response?.data?.includes(200)) {
         console.log(chalk.bgGreen('push success'));
       } else {
-        console.log(`failed ${response?.data}`);
+        console.error(`failed ${response?.data}`);
+        process.exit(1);
       }
     } catch (error) {
       console.log(
