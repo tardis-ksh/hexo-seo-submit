@@ -1,3 +1,12 @@
+# [0.7.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.6.0...v0.7.0) (2024-06-11)
+
+
+### Features
+
+* add exit code ([a2ff1b4](https://github.com/tardis-ksh/hexo-seo-submit/commit/a2ff1b49881796a1780c54cec35aa70ca79c99a3))
+
+
+
 # [0.6.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.5.0...v0.6.0) (2024-06-11)
 
 
@@ -32,15 +41,6 @@
 ### Features
 
 * add branch type ([1837b12](https://github.com/tardis-ksh/hexo-seo-submit/commit/1837b1235c38e203baeaf88aeb5ffbf2c995d567))
-
-
-
-# [0.2.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.1.0...v0.2.0) (2024-06-11)
-
-
-### Features
-
-* change text ([128f0cc](https://github.com/tardis-ksh/hexo-seo-submit/commit/128f0cce21da2be2ccb4b6dbc51cd5139c0fca14))
 
 
 
