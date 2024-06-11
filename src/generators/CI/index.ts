@@ -7,6 +7,7 @@ import generateTemplate from '@/handlebars';
 import Hexo from '@/types/hexo';
 import { CIPlatform, PLUGIN_NAME, SearchEngines } from '@/constants';
 import { SeoHexoConfig } from '@/types';
+import { combineFilePath } from '@/Utils';
 
 const moduleName = `${PLUGIN_NAME}[CI]:`;
 const getTemplateContent = async (path) => {
@@ -35,7 +36,7 @@ const CIGenerators = async (): Hexo['Return'] => {
 
       acc[key] = {
         enable: enable,
-        file: path,
+        file: combineFilePath(path),
         name: key,
       };
       return acc;
