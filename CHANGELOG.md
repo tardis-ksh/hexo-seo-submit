@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.2.0...v0.3.0) (2024-06-11)
+
+
+### Features
+
+* add branch type ([1837b12](https://github.com/tardis-ksh/hexo-seo-submit/commit/1837b1235c38e203baeaf88aeb5ffbf2c995d567))
+
+
+
 # [0.2.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.1.0...v0.2.0) (2024-06-11)
 
 
