@@ -12,10 +12,27 @@
   "bin": {
     "hexo-seo-submit": "bin/hexo-seo-submit.js"
   },
-  "keywords": [],
+  "files": [
+    "dist/**",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "keywords": [
+    "hexo",
+    "seo",
+    "deployer",
+    "google",
+    "baidu",
+    "bing",
+    "CI",
+    "auto push",
+    "github",
+    "codeing"
+  ],
   "author": "tardis <kshao666@gmail.com> (https://ksh7.com)",
   "license": "MIT",
-  "description": "a seo plugin for hexo, submit your site to search engines(google, bing, baidu, etc.)",
+  "description": "Manual or automatic submit your site to search engines(google, bing, baidu, etc.). There are github actions and coding jenkins available for CI",
   "packageManager": "pnpm@9.2.0",
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
