@@ -20,7 +20,7 @@ const CIGenerators = async (): Hexo['Return'] => {
   if (!CIConfig || !CIConfig?.enable) {
     return;
   }
-  console.log(chalk.bgGreen(`${moduleName} running`));
+  console.log(chalk.bgGreen(`${moduleName} running.`));
 
   const { cron } = CIConfig;
   const searchEngineConfig = Object.values(SearchEngines)
