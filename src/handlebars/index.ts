@@ -1,5 +1,6 @@
 import handlebars from 'handlebars';
 
+// parse if
 handlebars.registerHelper('if_eq', function (a, b, opts) {
   if (a === b) {
     return opts.fn(this);
@@ -7,6 +8,7 @@ handlebars.registerHelper('if_eq', function (a, b, opts) {
   return opts.inverse(this);
 });
 
+// skip parse
 handlebars.registerHelper('raw', function (options) {
   return options.toString();
 });
