@@ -98,7 +98,6 @@ program
 
     try {
       const submitConfig: Partial<BatchSubmitConfig> = {};
-      console.log(private_key, 'private_key');
       // use props
       if (client_email && private_key) {
         submitConfig.accountKeysJSon = JSON.stringify({
