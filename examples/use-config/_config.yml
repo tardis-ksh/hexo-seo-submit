@@ -3,6 +3,11 @@ hexo-seo-submit:
   sortBy: updated # created | updated, default created
   count: 5 # set all engine count
   fileRootPath: hexo-seo-submit # will generate in root/public/fileRootPath, default '', root/public/
+  CI:
+    enable: true
+    cron: 0 4 * * *
+    platform: github # github | coding
+    branch: main # actions trigger branch
   baidu:
     enable: true # default false
     path: baidu-url.txt # default path: root/public/hexo-seo-submit/baidu-url.txt

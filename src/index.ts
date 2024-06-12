@@ -21,6 +21,7 @@ const SearchEngineConfig = {
 
 const DefaultConfig: SeoHexoConfig = {
   fileRootPath: '',
+  count: 10,
   CI: {
     enable: true,
     platform: CIPlatform.GITHUB,
