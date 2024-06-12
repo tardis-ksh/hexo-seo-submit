@@ -29,7 +29,8 @@
     "CI",
     "auto push",
     "github",
-    "codeing"
+    "coding",
+    "jenkins"
   ],
   "author": "tardis <kshao666@gmail.com> (https://ksh7.com)",
   "license": "MIT",

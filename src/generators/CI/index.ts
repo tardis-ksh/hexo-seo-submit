@@ -62,6 +62,12 @@ const CIGenerators = async (): Hexo['Return'] => {
       branch,
       ...searchEngineConfig,
     },
+    [CIPlatform.CODING]: {
+      site: getSiteDomain(),
+      path: 'Jenkinsfile',
+      templateFile: await getTemplateContent('handlebars/template/jenkins.tpl'),
+      ...searchEngineConfig,
+    },
   };
   const currentPlatformConfig = platformConfig[CIConfig.platform];
 
