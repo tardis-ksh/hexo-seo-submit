@@ -1,3 +1,12 @@
+# [0.11.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.10.0...v0.11.0) (2024-06-12)
+
+
+### Features
+
+* remove quotation marks ([2f0abd2](https://github.com/tardis-ksh/hexo-seo-submit/commit/2f0abd234bd2a85a872b38f758013def8a35de5d))
+
+
+
 # [0.10.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.9.0...v0.10.0) (2024-06-12)
 
 
@@ -33,15 +42,6 @@
 ### Features
 
 * add exit code ([a2ff1b4](https://github.com/tardis-ksh/hexo-seo-submit/commit/a2ff1b49881796a1780c54cec35aa70ca79c99a3))
-
-
-
-# [0.6.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.5.0...v0.6.0) (2024-06-11)
-
-
-### Features
-
-* add exit code ([9ceb132](https://github.com/tardis-ksh/hexo-seo-submit/commit/9ceb132a82bbdc35ef344761e47ea6c7f8091f68))
 
 
 
