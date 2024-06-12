@@ -1,9 +1,17 @@
+def submitToSearchEngine(name, args) {
+    try {
+        sh "npx hexo-seo-submit $name $args"
+    } catch (exc) {
+        echo "$name submission failed: $exc"
+    }
+}
+
 pipeline {
   agent {
     docker {
       reuseNode 'true'
       registryUrl 'https://coding-public-docker.pkg.coding.net'
-      image 'public/docker/nodejs:20-2024.01'
+      image 'public/docker/nodejs:21-2024.01'
       args '-v /root/.npm:/root/.npm'
     }
   }
@@ -31,13 +39,13 @@ pipeline {
       }
 
       stage('Push Search Engines') {
-        steps {
-          script {
-            sh "npx hexo-seo-submit {{ baidu.name }} -t $env.BAIDU_TOKEN -s {{ site }} -f {{ baidu.file }}"
-            sh "npx hexo-seo-submit {{ bing.name }} -k $env.BING_APIKEY -f {{ bing.file }}"
-            sh "npx hexo-seo-submit {{ google.name }} -f {{ google.file }} -mail $env.GOOGLE_CLIENT_EMAIL -key $env.GOOGLE_PRIVATE_KEY"
+          steps {
+              script {
+                  submitToSearchEngine('{{ baidu.name }}', "-t $env.BAIDU_TOKEN -s {{ site }} -f {{ baidu.file }}")
+                  submitToSearchEngine('{{ bing.name }}', "-k $env.BING_APIKEY -f {{ bing.file }}")
+                  submitToSearchEngine('{{ google.name }}', "-f {{ google.file }} -mail $env.GOOGLE_CLIENT_EMAIL -key '$env.GOOGLE_PRIVATE_KEY'")
+              }
           }
-        }
       }
     }
   }

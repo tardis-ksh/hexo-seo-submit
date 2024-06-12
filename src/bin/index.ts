@@ -43,7 +43,7 @@ program
         ),
       );
     } catch (error) {
-      console.error(error.response?.data?.message || error.message);
+      console.error(chalk.red(error.response?.data?.message || error.message));
       process.exit(1);
     }
   });
@@ -64,7 +64,7 @@ program
       });
       console.log(chalk.bgGreen('push success'));
     } catch (error) {
-      console.error(error?.response?.data || error.message);
+      console.error(chalk.red(error?.response?.data || error.message));
       process.exit(1);
     }
   });
@@ -117,12 +117,14 @@ program
       if (response?.data?.includes(200)) {
         console.log(chalk.bgGreen('push success'));
       } else {
-        console.error(`failed ${response?.data}`);
+        console.error(chalk.red(`failed ${response?.data}`));
         process.exit(1);
       }
     } catch (error) {
       console.log(
-        `google error: ${error?.response?.data.error.message || error.message}`,
+        chalk.red(
+          `google error: ${error?.response?.data.error.message || error.message}`,
+        ),
       );
       process.exit(1);
     }

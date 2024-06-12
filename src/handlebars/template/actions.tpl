@@ -43,6 +43,7 @@ jobs:
       {{#if baidu.enable}}
       - name: push search engine {{ baidu.name }}
         if: env.is_owner
+        continue-on-error: true
         run: |
           npx hexo-seo-submit {{ baidu.name }} -t {{{raw "${{ secrets.baidu_token }}"}}} -s {{ site }} -f {{ baidu.file }}
       {{/if}}
@@ -50,6 +51,7 @@ jobs:
       {{#if bing.enable}}
       - name: push search engine {{ bing.name }}
         if: env.is_owner
+        continue-on-error: true
         run: |
           npx hexo-seo-submit {{ bing.name }} -k {{{raw "${{ secrets.bing_apikey }}"}}} -f {{ bing.file }}
       {{/if}}
@@ -57,6 +59,7 @@ jobs:
       {{#if google.enable}}
       - name: push search engine {{ google.name }}
         if: env.is_owner
+        continue-on-error: true
         run: |
           npx hexo-seo-submit {{ google.name }} -f {{ google.file }} -mail {{{raw "${{ secrets.google_client_email }}"}}} -key "{{{raw "${{ secrets.google_private_key }}"}}}"
       {{/if}}
