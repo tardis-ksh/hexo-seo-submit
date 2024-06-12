@@ -1,3 +1,14 @@
+# [0.9.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.8.0...v0.9.0) (2024-06-12)
+
+
+### Features
+
+* remove log ([c0d179a](https://github.com/tardis-ksh/hexo-seo-submit/commit/c0d179ae727b2c0a63154562cbfd230d028548e9))
+* update docs ([20b40f9](https://github.com/tardis-ksh/hexo-seo-submit/commit/20b40f929623465632ff315681595bf88fd235ca))
+* update docs ([70acd13](https://github.com/tardis-ksh/hexo-seo-submit/commit/70acd13e12584a715bc61bf9eb195a31d63232f1))
+
+
+
 # [0.8.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.7.0...v0.8.0) (2024-06-12)
 
 
@@ -32,15 +43,6 @@
 
 * update template ([50d0cdd](https://github.com/tardis-ksh/hexo-seo-submit/commit/50d0cdde960944a38ea4d4b5aa970c442c17bc3e))
 * update template ([9451164](https://github.com/tardis-ksh/hexo-seo-submit/commit/94511647a0e8685d3dd2045bd3c3d6f451df5acf))
-
-
-
-# [0.4.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.3.0...v0.4.0) (2024-06-11)
-
-
-### Features
-
-* update template ([1435e65](https://github.com/tardis-ksh/hexo-seo-submit/commit/1435e655c61534fe4de8a4e7b488d48a88838ead))
 
 
 
