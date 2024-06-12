@@ -1,3 +1,12 @@
+# [0.8.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.7.0...v0.8.0) (2024-06-12)
+
+
+### Features
+
+* add coding platform ([ea53593](https://github.com/tardis-ksh/hexo-seo-submit/commit/ea53593e86a9981a5e2b30d69393fbce0a29871e))
+
+
+
 # [0.7.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.6.0...v0.7.0) (2024-06-11)
 
 
@@ -32,15 +41,6 @@
 ### Features
 
 * update template ([1435e65](https://github.com/tardis-ksh/hexo-seo-submit/commit/1435e655c61534fe4de8a4e7b488d48a88838ead))
-
-
-
-# [0.3.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.2.0...v0.3.0) (2024-06-11)
-
-
-### Features
-
-* add branch type ([1837b12](https://github.com/tardis-ksh/hexo-seo-submit/commit/1837b1235c38e203baeaf88aeb5ffbf2c995d567))
 
 
 
