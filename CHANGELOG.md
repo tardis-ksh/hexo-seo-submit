@@ -1,3 +1,12 @@
+# [0.10.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.9.0...v0.10.0) (2024-06-12)
+
+
+### Features
+
+* continue-on-error ([ad9badb](https://github.com/tardis-ksh/hexo-seo-submit/commit/ad9badb6514b48d17578c5d49b9b509acaa6ebce))
+
+
+
 # [0.9.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.8.0...v0.9.0) (2024-06-12)
 
 
@@ -33,16 +42,6 @@
 ### Features
 
 * add exit code ([9ceb132](https://github.com/tardis-ksh/hexo-seo-submit/commit/9ceb132a82bbdc35ef344761e47ea6c7f8091f68))
-
-
-
-# [0.5.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.4.0...v0.5.0) (2024-06-11)
-
-
-### Features
-
-* update template ([50d0cdd](https://github.com/tardis-ksh/hexo-seo-submit/commit/50d0cdde960944a38ea4d4b5aa970c442c17bc3e))
-* update template ([9451164](https://github.com/tardis-ksh/hexo-seo-submit/commit/94511647a0e8685d3dd2045bd3c3d6f451df5acf))
 
 
 
