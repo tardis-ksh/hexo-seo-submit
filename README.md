@@ -296,5 +296,8 @@ http://data.zz.baidu.com/urls?site=https://ksh7.com&token=***********
 ![](https://image.baidu.com/search/down?url=https://gzw.sinaimg.cn/mw2000/0085UwQ9gy1hqmmsy5d3dj31rw0zudnw.jpg)
 
 # 参考
+> [hexo-seo-submit docs](https://ksh7.com/posts/docs-hexo-seo-submit/)
+
 > [Hexo-SEO-AutoPush](https://github.com/Lete114/Hexo-SEO-AutoPush/tree/master)
+
 > [hexo-url-submission](https://github.com/abnerwei/hexo-url-submission.git)
