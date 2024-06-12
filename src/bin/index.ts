@@ -62,9 +62,13 @@ program
         siteUrl: urlJson?.siteUrl,
         apiKey: key,
       });
-      console.log(chalk.bgGreen('push success'));
+      console.log(chalk.bgGreen(`${SearchEngines.BING}: push success`));
     } catch (error) {
-      console.error(chalk.red(error?.response?.data || error.message));
+      console.error(
+        chalk.red(
+          `${SearchEngines.BING} error: ${error?.response?.data || error.message}`,
+        ),
+      );
       process.exit(1);
     }
   });
@@ -91,7 +95,7 @@ program
       options;
 
     if (!accountKeysJSonFile && !(client_email && private_key)) {
-      console.error('error: miss credentials');
+      console.error(`${SearchEngines.GOOGLE} error: miss credentials`);
       process.exit(1);
       return;
     }
@@ -115,15 +119,17 @@ program
       });
 
       if (response?.data?.includes(200)) {
-        console.log(chalk.bgGreen('push success'));
+        console.log(chalk.bgGreen(`${SearchEngines.GOOGLE}: push success`));
       } else {
-        console.error(chalk.red(`failed ${response?.data}`));
+        console.error(
+          chalk.red(`${SearchEngines.GOOGLE} failed ${response?.data}`),
+        );
         process.exit(1);
       }
     } catch (error) {
       console.log(
         chalk.red(
-          `google error: ${error?.response?.data.error.message || error.message}`,
+          `${SearchEngines.GOOGLE} error: ${error?.response?.data.error.message || error.message}`,
         ),
       );
       process.exit(1);
