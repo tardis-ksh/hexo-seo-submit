@@ -10,10 +10,6 @@ updates:
     schedule:
       interval: "weekly"
     groups:
-      pnpm-dependencies:
-        patterns:
-          - "@pnpm/lockfile-file"
-          - "@pnpm/dependency-path"
       dev-dependencies:
         dependency-type: "development"
         update-types:
