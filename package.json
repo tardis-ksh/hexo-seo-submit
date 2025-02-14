@@ -10,7 +10,7 @@
     "lint": "eslint"
   },
   "bin": {
-    "hexo-seo-submit": "bin/hexo-seo-submit.js"
+    "hexo-seo-submit": "bin/hexo-seo-submit.mjs"
   },
   "files": [
     "dist/**",
