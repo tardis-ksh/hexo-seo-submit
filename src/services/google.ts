@@ -24,7 +24,9 @@ export const getGoogleAccessToken = async (
   const auth = new GoogleAuth({
     credentials: {
       client_email: secretsConfig.client_email,
-      private_key: secretsConfig.private_key,
+
+      // 处理换行符在被转义后丢失的问题：如 环境变量或读取文本中
+      private_key: secretsConfig.private_key?.replace(/(\\|\\\\)n/g, '\n'),
     },
     scopes: ['https://www.googleapis.com/auth/indexing'],
   });
