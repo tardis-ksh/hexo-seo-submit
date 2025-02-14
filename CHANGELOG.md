@@ -1,3 +1,12 @@
+# [0.13.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.12.0...v0.13.0) (2025-02-14)
+
+
+### Features
+
+* use stable version ([92acb83](https://github.com/tardis-ksh/hexo-seo-submit/commit/92acb839f898558a8b8eadc59b8be06f8d39be6c))
+
+
+
 # [0.12.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.11.0...v0.12.0) (2025-02-14)
 
 
@@ -34,15 +43,6 @@
 * remove log ([c0d179a](https://github.com/tardis-ksh/hexo-seo-submit/commit/c0d179ae727b2c0a63154562cbfd230d028548e9))
 * update docs ([20b40f9](https://github.com/tardis-ksh/hexo-seo-submit/commit/20b40f929623465632ff315681595bf88fd235ca))
 * update docs ([70acd13](https://github.com/tardis-ksh/hexo-seo-submit/commit/70acd13e12584a715bc61bf9eb195a31d63232f1))
-
-
-
-# [0.8.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.7.0...v0.8.0) (2024-06-12)
-
-
-### Features
-
-* add coding platform ([ea53593](https://github.com/tardis-ksh/hexo-seo-submit/commit/ea53593e86a9981a5e2b30d69393fbce0a29871e))
 
 
 
