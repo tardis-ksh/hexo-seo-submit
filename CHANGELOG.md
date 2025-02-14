@@ -1,3 +1,12 @@
+## [1.4.1](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.4.0...v1.4.1) (2025-02-14)
+
+
+### Bug Fixes
+
+* use new version ([e65630d](https://github.com/tardis-ksh/hexo-seo-submit/commit/e65630d70974f8cc8bb143e9508f16f26b3e3cbb))
+
+
+
 # [1.4.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.3.0...v1.4.0) (2025-02-14)
 
 
@@ -31,22 +40,6 @@
 ### Features
 
 * update esm ([2bae9a5](https://github.com/tardis-ksh/hexo-seo-submit/commit/2bae9a5ef5a3802e9e36890cb04dff29332cddb7))
-
-
-
-# [1.0.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.15.0...v1.0.0) (2025-02-14)
-
-
-### Features
-
-* **breaking change:** update deps ([31de769](https://github.com/tardis-ksh/hexo-seo-submit/commit/31de76932f2f18ba3024b6f0fdbe1335c6b0e1fb))
-
-
-### BREAKING CHANGES
-
-* **breaking change:** - update commander: break change => use shorter key(-mail => -m)
-
-- update chalk => need esm
 
 
 
