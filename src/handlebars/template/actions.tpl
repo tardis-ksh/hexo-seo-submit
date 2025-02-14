@@ -36,7 +36,8 @@ jobs:
         env:
           GITHUB_EVENT_PATH: {{{raw "${{ github.event_path }}"}}}
 
-      - run: |
+      - name: install dependencies
+        run: |
           npm init -y
           npm install hexo-seo-submit
 

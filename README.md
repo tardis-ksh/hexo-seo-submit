@@ -9,24 +9,21 @@
 
 自动或手动提交您的网站信息至搜索引擎（谷歌，bing，百度）。支持配置 `GitHub Actions` 或 `Coding Jenkins` 来适配不同平台的 `CI`
 
-[![CI status][github-action-image]][github-action-url]
-[![NPM version][npm-image]][npm-url]
-[![NPM downloads][download-image]][download-url]
-</div>
+[![CI status][github-action-image]][github-action-url] [![NPM version][npm-image]][npm-url] [![NPM downloads][download-image]][download-url]
 
+</div>
 
 [github-action-image]: https://github.com/tardis-ksh/hexo-seo-submit/actions/workflows/publish.yml/badge.svg
 [github-action-url]: https://github.com/tardis-ksh/hexo-seo-submit/actions/workflows/publish.yml
-
 [npm-image]: https://img.shields.io/npm/v/hexo-seo-submit.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/hexo-seo-submit
-
 [download-image]: https://img.shields.io/npm/dm/hexo-seo-submit.svg?style=flat-square
 [download-url]: https://npmjs.org/package/hexo-seo-submit
 
 > star 后使用，效果更佳~~
 
 ## 📦 Install
+
 ```bash
 npm install hexo-seo-submit
 ```
@@ -40,12 +37,15 @@ pnpm add hexo-seo-submit
 ```
 
 ## 🔨 Usage
+
+> 直达文档：[hexo-seo-submit docs](https://ksh7.com/posts/docs-hexo-seo-submit/)
+
 在 `hexo/_config.yml` 中配置 `hexo-seo-submit`
 
 ```yaml root/_config.yml
 hexo-seo-submit:
   sortBy: updated # created | updated, default created
-  count: 2  # set all engine count, default 10
+  count: 2 # set all engine count, default 10
   fileRootPath: hexo-seo-submit # will generate in root/public/fileRootPath, default '', root/public/
   CI:
     enable: true
@@ -62,7 +62,7 @@ hexo-seo-submit:
     enable: true
     path: google-url.txt # default google.txt
     # find path in root
-    accountKeysJSonFile: google.json  # path.join(process.cwd(), path)
+    accountKeysJSonFile: google.json # path.join(process.cwd(), path)
     count: 2
     # maybe required
     proxy: http://127.0.0.1:7890
@@ -74,6 +74,7 @@ hexo-seo-submit:
 ```
 
 ### github 中使用
+
 如果在 `github actions` 中运行，可如下简化
 
 ```yaml
@@ -97,19 +98,27 @@ deploy:
   ignore_hidden: false # 忽略隐藏文件及文件夹(目录)
 ```
 
-配置环境变量，去除引号直接粘贴至 即可
+**复制[申请凭证](#申请凭证)中获取的值，注意`粘贴`时需去除`引号`。`name` 可以直接复制表格**
 
 ![](https://image.baidu.com/search/down?url=https://gzw.sinaimg.cn/mw2000/0085UwQ9gy1hqmmt0w7nrj31ww0tqdpd.jpg)
 
-| Name                | Value                                                           | 说明                          |
-| ------------------- |-----------------------------------------------------------------|-----------------------------|
-| baidu_token         |                                                                 | 百度的 token                   |
-| bing_apikey         |  | 必应的 apikey                  |
-| google_private_key  |  -----BEGIN PRIVATE KEY-----\n.....\n-----END PRIVATE KEY-----\n | 谷歌的 private_key，注意：粘贴时请去除引号 |
-| google_client_email |                                                                 | 谷歌的 client_email            |
+| Name | Value | 说明               |
+| --- | --- |------------------|
+| baidu_token |  | 百度的 token        |
+| bing_apikey |  | 必应的 apikey       |
+| google_private_key | -----BEGIN PRIVATE KEY-----\n.....\n-----END PRIVATE KEY-----\n | 谷歌的 private_key  |
+| google_client_email |  | 谷歌的 client_email |
 
+**谷歌的 `private_key` 在带引号或不带引号复制粘贴时，在 `actions` 变量输入框中将表现不一（如下的图一和图二）。带引号复制粘贴会在使用时转义 `换行符`（`\n` => `\\n` or `\\\\n`），目前理论解决该问题，若遇到 `routines::unsupported` 可尝试直接复制粘贴引号内的内容~**
+
+> 图一：复制粘贴引号内的内容
+> 图二：复制粘贴包含引号内容，再去除引号
+
+![复制引号内的内容](https://image.baidu.com/search/down?url=https://static.ksh7.com/post/docs-hexo-seo-submit/google-key-1.webp)
+![复制的内容包含引号](https://image.baidu.com/search/down?url=https://static.ksh7.com/post/docs-hexo-seo-submit/google-key-2.webp)
 
 ### coding 中使用
+
 ```yaml
 hexo-seo-submit:
   CI:
@@ -125,30 +134,25 @@ hexo-seo-submit:
 
 1. `在项目 => 持续集成 => 构建计划` 中创建构建计划
 
-![](https://image.baidu.com/search/down?url=https://gzw.sinaimg.cn/mw2000/0085UwQ9gy1hqmmxy07h9j30b40ug76k.jpg)
-![](https://image.baidu.com/search/down?url=https://gzw.sinaimg.cn/mw2000/0085UwQ9gy1hqmmt10atqj31ts11e4ed.jpg)
-2.  创建完后点 `去设置` 在基础信息中，将 `配置来源` 选择为 `使用代码库中的 Jenkinsfile`。`节点配置池` 需要选择可以连接 google 的节点，若无此需求可随意
+![](https://image.baidu.com/search/down?url=https://gzw.sinaimg.cn/mw2000/0085UwQ9gy1hqmmxy07h9j30b40ug76k.jpg) ![](https://image.baidu.com/search/down?url=https://gzw.sinaimg.cn/mw2000/0085UwQ9gy1hqmmt10atqj31ts11e4ed.jpg) 2. 创建完后点 `去设置` 在基础信息中，将 `配置来源` 选择为 `使用代码库中的 Jenkinsfile`。`节点配置池` 需要选择可以连接 google 的节点，若无此需求可随意
 
-![](https://image.baidu.com/search/down?url=https://gzw.sinaimg.cn/mw2000/0085UwQ9gy1hqmn9pjbhsj31yu12cnam.jpg)
-3. 在 `触发规则` 中可配置触发条件，例如：`main` 分支提交时触发和定时触发等。注意点保存
+![](https://image.baidu.com/search/down?url=https://gzw.sinaimg.cn/mw2000/0085UwQ9gy1hqmn9pjbhsj31yu12cnam.jpg) 3. 在 `触发规则` 中可配置触发条件，例如：`main` 分支提交时触发和定时触发等。注意点保存
 
-![](https://image.baidu.com/search/down?url=https://gzw.sinaimg.cn/mw2000/0085UwQ9gy1hqmn9pfhxvj32i00tmtl6.jpg)
-![](https://image.baidu.com/search/down?url=https://gzw.sinaimg.cn/mw2000/0085UwQ9gy1hqmn9p74jxj316e0yctfb.jpg)
-4. 在 `变量与缓存` 中添加环境变量
+![](https://image.baidu.com/search/down?url=https://gzw.sinaimg.cn/mw2000/0085UwQ9gy1hqmn9pfhxvj32i00tmtl6.jpg) ![](https://image.baidu.com/search/down?url=https://gzw.sinaimg.cn/mw2000/0085UwQ9gy1hqmn9p74jxj316e0yctfb.jpg) 4. 在 `变量与缓存` 中添加环境变量
 
 ![](https://image.baidu.com/search/down?url=https://gzw.sinaimg.cn/mw2000/0085UwQ9gy1hqmn9q8iowj31p80mkk08.jpg)
 
-需要注意的是在 `coding` 中 `google_private_key` 需要 `引号`
+**变量都不需要`引号`，复制粘贴 `google_private_key` 时需保持格式正确，建议连带`引号`复制，再去除即可**
 
-| Name                | Value                                                           | 说明                         |
-| ------------------- |-----------------------------------------------------------------|----------------------------|
-| baidu_token         |                                                                 | 百度的 token                  |
-| bing_apikey         |  | 必应的 apikey                 |
-| google_private_key  |  "-----BEGIN PRIVATE KEY-----\n.....\n-----END PRIVATE KEY-----\n" | 谷歌的 private_key，注意：粘贴时需要`引号` |
-| google_client_email |                                                                 | 谷歌的 client_email           |
-
+| Name | Value | 说明 |
+| --- | --- | --- |
+| baidu_token |  | 百度的 token |
+| bing_apikey |  | 必应的 apikey |
+| google_private_key | -----BEGIN PRIVATE KEY-----\n.....\n-----END PRIVATE KEY-----\n | 谷歌的 private_key |
+| google_client_email |  | 谷歌的 client_email |
 
 ### 本地 `deploy` 时 `push` 到搜索引擎
+
 ```yaml
 hexo-seo-submit:
   baidu:
@@ -167,11 +171,10 @@ deploy:
   - type: hexo-seo-submit
 ```
 
-本地执行 `hexo deploy` 时，`hexo-seo-submit` 会将 `public` 中生成的 `urls` 提交至搜索引擎、
-你需要将申请的 Baidu token、Bing apikey、Google json 填入。如果你的网络环境连接 `google` 较慢的话，可以尝试使用 `proxy` 字段，支持 `https`。
-最后需要在 `deploy` 中配置
+本地执行 `hexo deploy` 时，`hexo-seo-submit` 会将 `public` 中生成的 `urls` 提交至搜索引擎、你需要将申请的 Baidu token、Bing apikey、Google json 填入。如果你的网络环境连接 `google` 较慢的话，可以尝试使用 `proxy` 字段，支持 `https`。最后需要在 `deploy` 中配置
 
 ## 参数
+
 # hexo-seo-submit 配置参数描述
 
 | 参数                        | 类型    | 描述                                                                       | 默认值                   |
@@ -204,11 +207,13 @@ deploy:
 | `bing.path`                 | string  |                                                                          | bing.json             |
 
 ## 使用命令执行
+
 ```shell
 npx hexo-seo-submit -h
 # or
 npx hexo-seo-submit google -h
 ```
+
 ```shell
 # baidu
 $ npx hexo-seo-submit baidu -t <your baidu token> -s https://ksh7.com -f baidu.txt
@@ -227,13 +232,15 @@ $ npx hexo-seo-submit google -f examples/files/baidu.txt -p http://127.0.0.1:789
 ```
 
 ## 注意事项
+
 1. 搜索引擎中的 `path` 更改时注意后缀应于默认值保持一致
 2. `google` 连接缓慢？请使用 `proxy` 字段
 3. `google push` 失败？请注意 `google_private_key` 的格式
 
-
 # 申请凭证
+
 ## Baidu
+
 [百度站长平台](https://ziyuan.baidu.com) => `普通收录` => `资源提交` 中得到 `token`，
 
 ```
@@ -247,6 +254,7 @@ http://data.zz.baidu.com/urls?site=https://ksh7.com&token=***********
 ![](https://image.baidu.com/search/down?url=https://gzw.sinaimg.cn/mw2000/0085UwQ9gy1hqmnxqrl97j31um11cjzj.jpg)
 
 ## Google
+
 1. 进入 [Web Search Indexing API](https://console.cloud.google.com/apis/library/indexing.googleapis.com)，选择 `项目` 并启用 API，没有可新建。
 
 ![](https://image.baidu.com/search/down?url=https://gzw.sinaimg.cn/mw2000/0085UwQ9gy1hqmmsy6c7lj31mc1307c9.jpg)
@@ -263,8 +271,7 @@ http://data.zz.baidu.com/urls?site=https://ksh7.com&token=***********
 
 ![](https://image.baidu.com/search/down?url=https://gzw.sinaimg.cn/mw2000/0085UwQ9gy1hqmmsy1ok3j31f40ygthb.jpg)
 
-内容如下，在 `github secrets` 中分别对应 `google_private_key`、`google_client_email`
-注意，在 `github` 中，复制 `private_key` 时不需要 `引号`，在 `coding` 中复制需要 `引号`
+内容如下，在 `github secrets` 中分别对应 `google_private_key`、`google_client_email` 注意，在 `github` 中，复制 `private_key` 时不需要 `引号`，在 `coding` 中复制需要 `引号`
 
 ```json
 {
@@ -296,6 +303,7 @@ http://data.zz.baidu.com/urls?site=https://ksh7.com&token=***********
 ![](https://image.baidu.com/search/down?url=https://gzw.sinaimg.cn/mw2000/0085UwQ9gy1hqmmsy5d3dj31rw0zudnw.jpg)
 
 # 参考
+
 > [hexo-seo-submit docs](https://ksh7.com/posts/docs-hexo-seo-submit/)
 
 > [Hexo-SEO-AutoPush](https://github.com/Lete114/Hexo-SEO-AutoPush/tree/master)

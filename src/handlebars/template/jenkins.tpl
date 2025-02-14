@@ -1,6 +1,9 @@
+// 此处会影响图形化编辑
 def submitToSearchEngine(name, args) {
     try {
-        sh "npx hexo-seo-submit $name $args"
+        sh """
+          npx hexo-seo-submit ${name} ${args}
+        """
     } catch (exc) {
         echo "$name submission failed: $exc"
     }
@@ -11,10 +14,9 @@ pipeline {
     docker {
       reuseNode 'true'
       registryUrl 'https://coding-public-docker.pkg.coding.net'
-      image 'public/docker/nodejs:21-2024.01'
-      args '-v /root/.npm:/root/.npm'
+      image 'public/docker/nodejs:22-2024.08'
     }
-  }
+ }
 
   stages {
     stage('Checkout') {
@@ -43,7 +45,7 @@ pipeline {
               script {
                   submitToSearchEngine('{{ baidu.name }}', "-t $env.BAIDU_TOKEN -s {{ site }} -f {{ baidu.file }}")
                   submitToSearchEngine('{{ bing.name }}', "-k $env.BING_APIKEY -f {{ bing.file }}")
-                  submitToSearchEngine('{{ google.name }}', "-f {{ google.file }} -mail $env.GOOGLE_CLIENT_EMAIL -key $env.GOOGLE_PRIVATE_KEY")
+                  submitToSearchEngine('{{ google.name }}', "-f {{ google.file }} -mail $env.GOOGLE_CLIENT_EMAIL -key '$env.GOOGLE_PRIVATE_KEY'")
               }
           }
       }
