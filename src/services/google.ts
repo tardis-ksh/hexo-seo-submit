@@ -24,7 +24,7 @@ export const getGoogleAccessToken = async (
   const auth = new GoogleAuth({
     credentials: {
       client_email: secretsConfig.client_email,
-      private_key: secretsConfig.private_key,
+      private_key: secretsConfig.private_key.replace(/\\n/g, '\n'),
     },
     scopes: ['https://www.googleapis.com/auth/indexing'],
   });
