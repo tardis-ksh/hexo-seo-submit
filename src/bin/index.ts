@@ -3,6 +3,7 @@ import { program } from 'commander';
 import fs from 'node:fs';
 import nodePath from 'node:path';
 import chalk from 'chalk';
+import { fileURLToPath } from 'node:url';
 
 import { PLUGIN_NAME, SearchEngines } from '@/constants';
 import { getFileContent } from '@/Utils';
@@ -11,8 +12,10 @@ import { submitUrlToEngine as bingSubmitUrlToEngine } from '@/services/bing';
 import googleBatchSubmit from '@/deploys/Google/batchSubmit';
 import type { BatchSubmitConfig } from '@/deploys/Google/type';
 
+const dirname = fileURLToPath(new URL('../../', import.meta.url));
+
 const packageJsonContent = fs.readFileSync(
-  nodePath.join(process.cwd(), 'package.json'),
+  nodePath.join(dirname, 'package.json'),
   'utf8',
 );
 
