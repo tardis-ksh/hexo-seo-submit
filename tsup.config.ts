@@ -2,7 +2,7 @@ import { defineConfig, type Options } from 'tsup';
 import * as path from 'node:path';
 
 const baseConfig: Partial<Options> = {
-  format: ['cjs'], // CommonJS
+  format: ['esm'], // CommonJS
   platform: 'node',
   dts: false, // 生成 .d.ts 声明文件
   sourcemap: false,

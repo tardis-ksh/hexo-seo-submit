@@ -62,5 +62,5 @@ jobs:
         if: env.is_owner
         continue-on-error: true
         run: |
-          npx hexo-seo-submit {{ google.name }} -f {{ google.file }} -mail {{{raw "${{ secrets.google_client_email }}"}}} -key "{{{raw "${{ secrets.google_private_key }}"}}}"
+          npx hexo-seo-submit {{ google.name }} -f {{ google.file }} -m {{{raw "${{ secrets.google_client_email }}"}}} -k "{{{raw "${{ secrets.google_private_key }}"}}}"
       {{/if}}

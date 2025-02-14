@@ -81,13 +81,10 @@ program
     '-p, --proxy <proxy>',
     'https proxy url. Eg: http[s]://127.0.0.1:7890',
   )
+  .option('-m, --client_email <client_email>', 'accountKeysJSon.client_email')
+  .option('-k, --private_key <private_key>', 'accountKeysJSon.private_key')
   .option(
-    '-mail, --client_email <client_email>',
-    'accountKeysJSon.client_email',
-  )
-  .option('-key, --private_key <private_key>', 'accountKeysJSon.private_key')
-  .option(
-    '-kf, --accountKeysJSonFile <accountKeysJSonFile>',
+    '-a, --accountKeysJSonFile <accountKeysJSonFile>',
     'accountKeysJSonFile path',
   )
   .action(async (_, options) => {
