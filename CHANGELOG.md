@@ -1,3 +1,12 @@
+# [1.3.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.2.0...v1.3.0) (2025-02-14)
+
+
+### Features
+
+* use import meta to get dirname ([c06991e](https://github.com/tardis-ksh/hexo-seo-submit/commit/c06991ed46a7d9300f996af11ccce4b514552b25))
+
+
+
 # [1.2.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.1.0...v1.2.0) (2025-02-14)
 
 
@@ -38,15 +47,6 @@
 ### Features
 
 * use stable version ([df4360b](https://github.com/tardis-ksh/hexo-seo-submit/commit/df4360b0049676246ba815d3fec8fad91a1729ee))
-
-
-
-# [0.14.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.13.0...v0.14.0) (2025-02-14)
-
-
-### Features
-
-* use stable version ([aa530cc](https://github.com/tardis-ksh/hexo-seo-submit/commit/aa530cc08220507fb7eff735c896991a2fea04b5))
 
 
 
