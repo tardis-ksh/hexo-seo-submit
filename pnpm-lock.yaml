@@ -12,8 +12,8 @@ importers:
         specifier: ^1.7.9
         version: 1.7.9
       chalk:
-        specifier: ^5.4.1
-        version: 5.4.1
+        specifier: ^4.1.2
+        version: 4.1.2
       commander:
         specifier: ^12.1.0
         version: 12.1.0
