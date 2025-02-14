@@ -1,3 +1,12 @@
+# [0.15.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.14.0...v0.15.0) (2025-02-14)
+
+
+### Features
+
+* use stable version ([df4360b](https://github.com/tardis-ksh/hexo-seo-submit/commit/df4360b0049676246ba815d3fec8fad91a1729ee))
+
+
+
 # [0.14.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.13.0...v0.14.0) (2025-02-14)
 
 
@@ -32,15 +41,6 @@
 ### Features
 
 * remove quotation marks ([2f0abd2](https://github.com/tardis-ksh/hexo-seo-submit/commit/2f0abd234bd2a85a872b38f758013def8a35de5d))
-
-
-
-# [0.10.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.9.0...v0.10.0) (2024-06-12)
-
-
-### Features
-
-* continue-on-error ([ad9badb](https://github.com/tardis-ksh/hexo-seo-submit/commit/ad9badb6514b48d17578c5d49b9b509acaa6ebce))
 
 
 
