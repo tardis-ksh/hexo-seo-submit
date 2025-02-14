@@ -1,3 +1,13 @@
+# [0.12.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.11.0...v0.12.0) (2025-02-14)
+
+
+### Features
+
+* support escape line break ([d8d3709](https://github.com/tardis-ksh/hexo-seo-submit/commit/d8d3709f758141062aa498a5e48c056d12c16f40))
+* update template ([d290561](https://github.com/tardis-ksh/hexo-seo-submit/commit/d290561a2b2114a7ce2c137954147c16d670bd00))
+
+
+
 # [0.11.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.10.0...v0.11.0) (2024-06-12)
 
 
@@ -33,15 +43,6 @@
 ### Features
 
 * add coding platform ([ea53593](https://github.com/tardis-ksh/hexo-seo-submit/commit/ea53593e86a9981a5e2b30d69393fbce0a29871e))
-
-
-
-# [0.7.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.6.0...v0.7.0) (2024-06-11)
-
-
-### Features
-
-* add exit code ([a2ff1b4](https://github.com/tardis-ksh/hexo-seo-submit/commit/a2ff1b49881796a1780c54cec35aa70ca79c99a3))
 
 
 
