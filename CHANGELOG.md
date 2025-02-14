@@ -1,3 +1,12 @@
+# [1.2.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.1.0...v1.2.0) (2025-02-14)
+
+
+### Features
+
+* update esm ([8f4cf1b](https://github.com/tardis-ksh/hexo-seo-submit/commit/8f4cf1bc83a600a09b0a8525a66b0dbf9915219e))
+
+
+
 # [1.1.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.0.0...v1.1.0) (2025-02-14)
 
 
@@ -38,15 +47,6 @@
 ### Features
 
 * use stable version ([aa530cc](https://github.com/tardis-ksh/hexo-seo-submit/commit/aa530cc08220507fb7eff735c896991a2fea04b5))
-
-
-
-# [0.13.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.12.0...v0.13.0) (2025-02-14)
-
-
-### Features
-
-* use stable version ([92acb83](https://github.com/tardis-ksh/hexo-seo-submit/commit/92acb839f898558a8b8eadc59b8be06f8d39be6c))
 
 
 
