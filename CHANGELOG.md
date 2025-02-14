@@ -1,3 +1,12 @@
+# [1.4.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.3.0...v1.4.0) (2025-02-14)
+
+
+### Features
+
+* for hexo stile cjs ([abfdf21](https://github.com/tardis-ksh/hexo-seo-submit/commit/abfdf216bbafa72b7cb0f9a6d37328e6229ed4a6))
+
+
+
 # [1.3.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.2.0...v1.3.0) (2025-02-14)
 
 
@@ -38,15 +47,6 @@
 * **breaking change:** - update commander: break change => use shorter key(-mail => -m)
 
 - update chalk => need esm
-
-
-
-# [0.15.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v0.14.0...v0.15.0) (2025-02-14)
-
-
-### Features
-
-* use stable version ([df4360b](https://github.com/tardis-ksh/hexo-seo-submit/commit/df4360b0049676246ba815d3fec8fad91a1729ee))
 
 
 
