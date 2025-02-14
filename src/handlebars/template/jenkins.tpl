@@ -45,7 +45,7 @@ pipeline {
               script {
                   submitToSearchEngine('{{ baidu.name }}', "-t $env.BAIDU_TOKEN -s {{ site }} -f {{ baidu.file }}")
                   submitToSearchEngine('{{ bing.name }}', "-k $env.BING_APIKEY -f {{ bing.file }}")
-                  submitToSearchEngine('{{ google.name }}', "-f {{ google.file }} -mail $env.GOOGLE_CLIENT_EMAIL -key '$env.GOOGLE_PRIVATE_KEY'")
+                  submitToSearchEngine('{{ google.name }}', "-f {{ google.file }} -m $env.GOOGLE_CLIENT_EMAIL -k '$env.GOOGLE_PRIVATE_KEY'")
               }
           }
       }
