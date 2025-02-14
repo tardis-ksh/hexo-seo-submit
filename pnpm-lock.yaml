@@ -15,8 +15,8 @@ importers:
         specifier: ^5.4.1
         version: 5.4.1
       commander:
-        specifier: ^13.1.0
-        version: 13.1.0
+        specifier: ^12.1.0
+        version: 12.1.0
       google-auth-library:
         specifier: ^9.15.1
         version: 9.15.1
@@ -46,8 +46,8 @@ importers:
         specifier: ^8.42.3
         version: 8.42.3
       '@types/hexo':
-        specifier: ^7.0.0
-        version: 7.0.0(chokidar@3.6.0)
+        specifier: ^3.8.12
+        version: 3.8.12
       '@types/lodash.merge':
         specifier: ^4.6.9
         version: 4.6.9
@@ -525,6 +525,15 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@types/bluebird@3.5.42':
+    resolution: {integrity: sha512-Jhy+MWRlro6UjVi578V/4ZGNfeCOcNCp0YaFNIUGFKlImowqwb1O/22wDVk3FDGMLqxdpOV3qQHD5fPEH4hK6A==}
+
+  '@types/bunyan@1.8.11':
+    resolution: {integrity: sha512-758fRH7umIMk5qt5ELmRMff4mLDlN+xyYzC+dkPTdKwbSkJFvz6xwyScrytPU0QIBbRRwbiE8/BIg8bpajerNQ==}
+
+  '@types/connect@3.4.38':
+    resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
+
   '@types/conventional-commits-parser@5.0.1':
     resolution: {integrity: sha512-7uz5EHdzz2TqoMfV7ee61Egf5y6NkcO4FB/1iCCQnbeiI1F3xzv3vK5dBCXUCLQgGYS+mUeigK1iKQzvED+QnQ==}
 
@@ -540,9 +549,11 @@ packages:
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
-  '@types/hexo@7.0.0':
-    resolution: {integrity: sha512-/AptWifzZzKp7ytHAw2/qdprwDPraJNDBfkBzXQA/3GuL3DDrb7IhrZgTVI5lGltLo0lAyz3iVWyGbL2xVREdQ==}
-    deprecated: This is a stub types definition. hexo provides its own type definitions, so you do not need this installed.
+  '@types/hexo-util@0.6.8':
+    resolution: {integrity: sha512-H2gDjGfVC+r7ui+n0qb/cdmVr1y/hkJYnjRI1PxGocQ9iQJQlmeTOUJdkY9MJoYSF2qy1do9sjdCulnGKT9Uzw==}
+
+  '@types/hexo@3.8.12':
+    resolution: {integrity: sha512-WttgP54oseh0lp0ad3WwZBvaUmIZg1LeaiYgYWKbtHgYl7a3nHBYLpkIdz0xuUItFiakh15PNMcYJwurfR6K1w==}
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -553,8 +564,14 @@ packages:
   '@types/lodash@4.17.5':
     resolution: {integrity: sha512-MBIOHVZqVqgfro1euRDWX7OO0fBVUUMrN6Pwm8LQsz8cWhEpihlvR70ENj3f40j58TNxZaWv2ndSkInykNBBJw==}
 
+  '@types/minimist@1.2.5':
+    resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==}
+
   '@types/node@22.13.2':
     resolution: {integrity: sha512-Z+r8y3XL9ZpI2EY52YYygAFmo2/oWfNSj4BCpAXE2McAexDk8VcnBMGC9Djn9gTKt4d2T/hhXqmPzo4hfIXtTg==}
+
+  '@types/underscore@1.13.0':
+    resolution: {integrity: sha512-L6LBgy1f0EFQZ+7uSA57+n2g/s4Qs5r06Vwrwn0/nuK1de+adz00NWaztRQ30aEqw5qOaWbPI8u2cGQ52lj6VA==}
 
   '@typescript-eslint/eslint-plugin@8.24.0':
     resolution: {integrity: sha512-aFcXEJJCI4gUdXgoo/j9udUYIHgF23MFkg09LFz2dzEmU0+1Plk4rQWv/IYKvPHAtlkkGoB3m5e6oUp+JPsNaQ==}
@@ -769,6 +786,10 @@ packages:
 
   command-exists@1.2.9:
     resolution: {integrity: sha512-LTQ/SGc+s0Xc0Fu5WaKnR0YiygZkm9eKFvyS+fRsU7/ZWFF8ykFM6Pc9aCVf1+xasOOZpO3BAVgVrKvsqKHV7w==}
+
+  commander@12.1.0:
+    resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
+    engines: {node: '>=18'}
 
   commander@13.1.0:
     resolution: {integrity: sha512-/rFeCpNJQbhSZjGVwO9RFV3xPqbnERS8MmIQzCtD/zl6gpJuV/bMLuN92oG3F7d8oDEHHRrujSXNUr8fpjntKw==}
@@ -2401,6 +2422,16 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.34.6':
     optional: true
 
+  '@types/bluebird@3.5.42': {}
+
+  '@types/bunyan@1.8.11':
+    dependencies:
+      '@types/node': 22.13.2
+
+  '@types/connect@3.4.38':
+    dependencies:
+      '@types/node': 22.13.2
+
   '@types/conventional-commits-parser@5.0.1':
     dependencies:
       '@types/node': 22.13.2
@@ -2418,11 +2449,19 @@ snapshots:
 
   '@types/estree@1.0.6': {}
 
-  '@types/hexo@7.0.0(chokidar@3.6.0)':
+  '@types/hexo-util@0.6.8':
     dependencies:
-      hexo: 7.3.0(chokidar@3.6.0)
-    transitivePeerDependencies:
-      - chokidar
+      '@types/node': 22.13.2
+
+  '@types/hexo@3.8.12':
+    dependencies:
+      '@types/bluebird': 3.5.42
+      '@types/bunyan': 1.8.11
+      '@types/connect': 3.4.38
+      '@types/hexo-util': 0.6.8
+      '@types/minimist': 1.2.5
+      '@types/underscore': 1.13.0
+      moment: 2.30.1
 
   '@types/json-schema@7.0.15': {}
 
@@ -2432,9 +2471,13 @@ snapshots:
 
   '@types/lodash@4.17.5': {}
 
+  '@types/minimist@1.2.5': {}
+
   '@types/node@22.13.2':
     dependencies:
       undici-types: 6.20.0
+
+  '@types/underscore@1.13.0': {}
 
   '@typescript-eslint/eslint-plugin@8.24.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3))(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3)':
     dependencies:
@@ -2673,6 +2716,8 @@ snapshots:
       delayed-stream: 1.0.0
 
   command-exists@1.2.9: {}
+
+  commander@12.1.0: {}
 
   commander@13.1.0: {}
 
