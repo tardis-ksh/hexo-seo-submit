@@ -13,7 +13,9 @@ import { CIPlatform, PLUGIN_NAME, SearchEngines } from '@/constants';
 import { SeoHexoConfig } from '@/types';
 import IHexo from '@/types/hexo';
 
-console.log(chalk.bold.bgMagenta(`${PLUGIN_NAME} run, have fun!`));
+console.log(
+  chalk.bold.bgMagenta(`${PLUGIN_NAME}@${PACKAGE_VERSION} run, have fun!`),
+);
 
 const SearchEngineConfig = {
   enable: false,

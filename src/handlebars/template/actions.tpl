@@ -46,7 +46,7 @@ jobs:
         if: env.is_owner
         continue-on-error: true
         run: |
-          npx hexo-seo-submit {{ baidu.name }} -t {{{raw "${{ secrets.baidu_token }}"}}} -s {{ site }} -f {{ baidu.file }}
+          npx hexo-seo-submit@{{PACKAGE_VERSION}} {{ baidu.name }} -t {{{raw "${{ secrets.baidu_token }}"}}} -s {{ site }} -f {{ baidu.file }}
       {{/if}}
 
       {{#if bing.enable}}
@@ -54,7 +54,7 @@ jobs:
         if: env.is_owner
         continue-on-error: true
         run: |
-          npx hexo-seo-submit {{ bing.name }} -k {{{raw "${{ secrets.bing_apikey }}"}}} -f {{ bing.file }}
+          npx hexo-seo-submit@{{PACKAGE_VERSION}} {{ bing.name }} -k {{{raw "${{ secrets.bing_apikey }}"}}} -f {{ bing.file }}
       {{/if}}
 
       {{#if google.enable}}
@@ -62,5 +62,5 @@ jobs:
         if: env.is_owner
         continue-on-error: true
         run: |
-          npx hexo-seo-submit {{ google.name }} -f {{ google.file }} -m {{{raw "${{ secrets.google_client_email }}"}}} -k "{{{raw "${{ secrets.google_private_key }}"}}}"
+          npx hexo-seo-submit@{{PACKAGE_VERSION}} {{ google.name }} -f {{ google.file }} -m {{{raw "${{ secrets.google_client_email }}"}}} -k "{{{raw "${{ secrets.google_private_key }}"}}}"
       {{/if}}

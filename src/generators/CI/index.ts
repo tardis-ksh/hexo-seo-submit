@@ -69,7 +69,13 @@ const CIGenerators = async (): Hexo['Return'] => {
       ...searchEngineConfig,
     },
   };
-  const currentPlatformConfig = platformConfig[CIConfig.platform];
+  const baseConfig = {
+    PACKAGE_VERSION,
+  };
+  const currentPlatformConfig = {
+    ...baseConfig,
+    ...platformConfig[CIConfig.platform],
+  };
 
   if (!currentPlatformConfig) {
     chalk.bgRed(

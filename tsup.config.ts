@@ -1,5 +1,15 @@
 import { defineConfig, type Options } from 'tsup';
 import * as path from 'node:path';
+import fsp from 'node:fs/promises';
+
+const getVersion = async () => {
+  const packageJson = await fsp.readFile(
+    path.resolve(__dirname, 'package.json'),
+    'utf8',
+  );
+
+  return JSON.parse(packageJson)?.version;
+};
 
 const baseConfig: Partial<Options> = {
   format: ['esm'], // CommonJS
@@ -13,7 +23,10 @@ const baseConfig: Partial<Options> = {
   bundle: true, // 启用代码打包
 
   splitting: true,
-  esbuildOptions: (options) => {
+  define: {
+    PACKAGE_VERSION: JSON.stringify(await getVersion()),
+  },
+  esbuildOptions: async (options) => {
     options.alias = {
       '@': path.resolve(process.cwd(), 'src'),
     };

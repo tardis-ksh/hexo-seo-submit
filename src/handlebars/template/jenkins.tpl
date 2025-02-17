@@ -2,7 +2,7 @@
 def submitToSearchEngine(name, args) {
     try {
         sh """
-          npx hexo-seo-submit ${name} ${args}
+          npx hexo-seo-submit@{{PACKAGE_VERSION}} ${name} ${args}
         """
     } catch (exc) {
         echo "$name submission failed: $exc"
