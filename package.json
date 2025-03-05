@@ -39,27 +39,26 @@
   "author": "tardis <kshao666@gmail.com> (https://ksh7.com)",
   "license": "MIT",
   "description": "Manual or automatic submit your site to search engines(google, bing, baidu). There are Github actions and coding jenkins available for CI",
-  "packageManager": "pnpm@10.3.0",
+  "packageManager": "pnpm@10.5.2",
   "devDependencies": {
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
-    "@eslint/js": "^9.20.0",
-    "@types/eslint__js": "^9.14.0",
+    "@eslint/js": "^9.21.0",
     "@types/hexo": "^3.8.12",
     "@types/lodash.merge": "^4.6.9",
-    "@types/node": "^22.13.2",
-    "@typescript-eslint/parser": "^8.24.0",
+    "@types/node": "^22.13.9",
+    "@typescript-eslint/parser": "^8.26.0",
     "cpx2": "^8.0.0",
-    "eslint": "^9.20.1",
-    "eslint-config-prettier": "^10.0.1",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.2",
     "eslint-plugin-prettier": "^5.2.3",
-    "globals": "^15.15.0",
+    "globals": "^16.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
-    "prettier": "^3.5.0",
-    "tsup": "^8.3.6",
-    "typescript": "^5.7.3",
-    "typescript-eslint": "^8.24.0"
+    "prettier": "^3.5.3",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0"
   },
   "lint-staged": {
     "src/*.{ts,js,json,md}": [
@@ -68,7 +67,7 @@
     ]
   },
   "dependencies": {
-    "axios": "^1.7.9",
+    "axios": "^1.8.1",
     "chalk": "^5.4.1",
     "commander": "^13.1.0",
     "google-auth-library": "^9.15.1",
