@@ -23,10 +23,10 @@ pipeline {
       steps {
         checkout([
           $class: 'GitSCM',
-          branches: [[name: GIT_BUILD_REF]],
+          branches: [[name: env.GIT_BUILD_REF]],
           userRemoteConfigs: [[
-            url: GIT_REPO_URL,
-            credentialsId: CREDENTIALS_ID
+            url: env.GIT_REPO_URL,
+            credentialsId: env.CREDENTIALS_ID
           ]]])
         }
       }
