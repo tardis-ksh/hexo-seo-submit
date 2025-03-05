@@ -1,3 +1,12 @@
+# [1.6.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.5.0...v1.6.0) (2025-03-05)
+
+
+### Features
+
+* update jenkins template ([88c8ad2](https://github.com/tardis-ksh/hexo-seo-submit/commit/88c8ad2e391006807e75b97598eb4f38d2cbd9f3))
+
+
+
 # [1.5.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.4.1...v1.5.0) (2025-02-17)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * use import meta to get dirname ([c06991e](https://github.com/tardis-ksh/hexo-seo-submit/commit/c06991ed46a7d9300f996af11ccce4b514552b25))
-
-
-
-# [1.2.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.1.0...v1.2.0) (2025-02-14)
-
-
-### Features
-
-* update esm ([8f4cf1b](https://github.com/tardis-ksh/hexo-seo-submit/commit/8f4cf1bc83a600a09b0a8525a66b0dbf9915219e))
 
 
 
