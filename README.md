@@ -47,6 +47,13 @@ hexo-seo-submit:
   sortBy: updated # created | updated, default created
   count: 2 # set all engine count, default 10
   fileRootPath: hexo-seo-submit # will generate in root/public/fileRootPath, default '', root/public/
+  
+  # includePaths & excludePaths: set all engine path rules
+  # includePaths has higher priority than excludePaths when conflict
+  # find path rules in https://www.npmjs.com/package/wildcard-match
+  includePaths: ['/posts/npm*'] # match path: /posts/npm-test1, /posts/npm/test1
+  excludePaths: ['/posts/*', '/posts/y?rn']
+  
   CI:
     enable: true
     cron: 0 4 * * *
@@ -58,6 +65,9 @@ hexo-seo-submit:
     path: baidu.txt # default google.txt
     count: 1
     token: you baidu token
+    sortBy: created
+    # overwrite root config includePaths(same excludePaths)
+    includePaths: ['/posts/y*']
   google:
     enable: true
     path: google-url.txt # default google.txt
@@ -177,34 +187,38 @@ deploy:
 
 # hexo-seo-submit 配置参数描述
 
-| 参数                        | 类型    | 描述                                                                       | 默认值                   |
-|-----------------------------|---------|--------------------------------------------------------------------------|-----------------------|
-| `hexo-seo-submit`           |         | 根配置项                                                                     |                       |
-| `sortBy`                    | string  | 排序依据，`created` 或 `updated` ，优先使用引擎中的字段                                   | `created`             |
-| `count`                     | integer | 生成 url 的数量，优先使用引擎中的字段                                                    | 10                    |
-| `fileRootPath`              | string  | 生成文件的根路径，将生成在 `root/public/fileRootPath` 目录，如果你不想分散在 public 目录中，则可以使用该字段 | `''`，即 `root/public/` |
-| `CI`                        | object  | 持续集成配置                                                                   |                       |
-| `CI.enable`                 | boolean | 是否启用持续集成                                                                 | false                 |
-| `CI.cron`                   | string  | CRON 表达式，指定任务调度时间，注意在 `actions` 中的时区，且仅在 `platform` 为 `github` 时有效       | `0 4 * * *`           |
-| `CI.platform`               | string  | `github` 或 `coding`                                                      | `github`              |
-| `CI.branch`                 | string  | 触发操作的分支名称，仅在 `github` 时有效                                                | `master`              |
-| `baidu`                     | object  | 百度搜索引擎配置                                                                 |                       |
-| `baidu.enable`              | boolean | 是否启用百度搜索引擎                                                               | false                 |
-| `baidu.path`                | string  | 生成 urls 文件的路径                                                            | `baidu.txt`           |
-| `baidu.count`               | integer | 生成 urls 的数量                                                              |                       |
-| `baidu.sortBy`               | string  | 排序依据                                                                     |                       || `baidu.token`               | string  | 百度搜索引擎的 token                                                            |                         |
-| `google`                    | object  | 谷歌搜索引擎配置                                                                 |                       |
-| `google.enable`             | boolean | 是否启用谷歌搜索引擎                                                               | true                  |
-| `google.path`               | string  |                                                                          | `google.txt`          |
-| `google.accountKeysJSonFile`| string  | 谷歌账户密钥文件路径，默认 root 目录寻找                                                  | `google.json`         |
-| `google.count`              | integer |                                                                          |                       |
-| `google.sortBy`              | integer |                                                                          |                       |
-| `google.proxy`              | string  | https proxy，如果你是 clash 一般默认为 `http://127.0.0.1:7890`                     |                       |
-| `bing`                      | object  | 必应搜索引擎配置                                                                 |                       |
-| `bing.enable`               | boolean | 是否启用必应搜索引擎                                                               | true                  |
-| `bing.apiKey`               | string  | 必应搜索引擎的 API 密钥                                                           |                       |
-| `bing.sortBy`               | string  |                                                                          |                       |
-| `bing.path`                 | string  |                                                                          | bing.json             |
+| 参数                           | 类型    | 描述                                                                       | 默认值        |
+|------------------------------|---------|--------------------------------------------------------------------------|------------|
+| `hexo-seo-submit`            |         | 根配置项                                                                     |            |
+| `sortBy`                     | string  | 排序依据，`created` 或 `updated` ，优先使用引擎中的字段                                   | `created`  |
+| `count`                      | integer | 生成 url 的数量，优先使用引擎中的字段                                                    | 10         |
+| `fileRootPath`               | string  | 生成文件的根路径，将生成在 `root/public/fileRootPath` 目录，如果你不想分散在 public 目录中，则可以使用该字段 | `''`，即 `root/public/` |
+| `includePaths`               | array   | 包含的路径规则，支持 `*` 通配符，优先级高于 `excludePaths`，当冲突时，以 `includePaths` 为准         |            |
+| `excludePaths`               | array   | 排除的路径规则，支持 `*` 通配符，                                                      |            |
+| `CI`                         | object  | 持续集成配置                                                                   |            |
+| `CI.enable`                  | boolean | 是否启用持续集成                                                                 | false      |
+| `CI.cron`                    | string  | CRON 表达式，指定任务调度时间，注意在 `actions` 中的时区，且仅在 `platform` 为 `github` 时有效       | `0 4 * * *` |
+| `CI.platform`                | string  | `github` 或 `coding`                                                      | `github`   |
+| `CI.branch`                  | string  | 触发操作的分支名称，仅在 `github` 时有效                                                | `master`   |
+| `baidu`                      | object  | 百度搜索引擎配置                                                                 |            |
+| `baidu.enable`               | boolean | 是否启用百度搜索引擎                                                               | false      |
+| `baidu.path`                 | string  | 生成 urls 文件的路径                                                            | `baidu.txt` |
+| `baidu.count`                | integer | 生成 urls 的数量                                                              |            |
+| `baidu.sortBy`               | string  | 排序依据                                                                     |            || `baidu.token`               | string  | 百度搜索引擎的 token                                                            |                         |
+| `baidu.includePaths`         | array   |                                                                          |            |
+| `baidu.excludePaths`               | array   |                                                                          |            |
+| `google`                     | object  | 谷歌搜索引擎配置                                                                 |            |
+| `google.enable`              | boolean | 是否启用谷歌搜索引擎                                                               | true       |
+| `google.path`                | string  |                                                                          | `google.txt` |
+| `google.accountKeysJSonFile` | string  | 谷歌账户密钥文件路径，默认 root 目录寻找                                                  | `google.json` |
+| `google.count`               | integer |                                                                          |            |
+| `google.sortBy`              | integer |                                                                          |            |
+| `google.proxy`               | string  | https proxy，如果你是 clash 一般默认为 `http://127.0.0.1:7890`                     |            |
+| `bing`                       | object  | 必应搜索引擎配置                                                                 |            |
+| `bing.enable`                | boolean | 是否启用必应搜索引擎                                                               | true       |
+| `bing.apiKey`                | string  | 必应搜索引擎的 API 密钥                                                           |            |
+| `bing.sortBy`                | string  |                                                                          |            |
+| `bing.path`                  | string  |                                                                          | bing.json  |
 
 ## 使用命令执行
 
