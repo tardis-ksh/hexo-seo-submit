@@ -1,3 +1,12 @@
+# [1.8.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.7.0...v1.8.0) (2025-03-12)
+
+
+### Features
+
+* update docs ([bcd118a](https://github.com/tardis-ksh/hexo-seo-submit/commit/bcd118ae0f162d1a771d0653d9b9885b5e2306dc))
+
+
+
 # [1.7.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.6.0...v1.7.0) (2025-03-12)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * use new version ([e65630d](https://github.com/tardis-ksh/hexo-seo-submit/commit/e65630d70974f8cc8bb143e9508f16f26b3e3cbb))
-
-
-
-# [1.4.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.3.0...v1.4.0) (2025-02-14)
-
-
-### Features
-
-* for hexo stile cjs ([abfdf21](https://github.com/tardis-ksh/hexo-seo-submit/commit/abfdf216bbafa72b7cb0f9a6d37328e6229ed4a6))
 
 
 
