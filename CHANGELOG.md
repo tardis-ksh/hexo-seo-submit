@@ -1,3 +1,12 @@
+# [1.7.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.6.0...v1.7.0) (2025-03-12)
+
+
+### Features
+
+* support path include & exclude ([b609b5b](https://github.com/tardis-ksh/hexo-seo-submit/commit/b609b5bc4e5f50e8dcd92b65aa2bdef93ac678a2))
+
+
+
 # [1.6.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.5.0...v1.6.0) (2025-03-05)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * for hexo stile cjs ([abfdf21](https://github.com/tardis-ksh/hexo-seo-submit/commit/abfdf216bbafa72b7cb0f9a6d37328e6229ed4a6))
-
-
-
-# [1.3.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.2.0...v1.3.0) (2025-02-14)
-
-
-### Features
-
-* use import meta to get dirname ([c06991e](https://github.com/tardis-ksh/hexo-seo-submit/commit/c06991ed46a7d9300f996af11ccce4b514552b25))
 
 
 
