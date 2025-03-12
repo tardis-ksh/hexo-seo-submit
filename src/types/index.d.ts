@@ -1,6 +1,13 @@
 import { CIPlatform, SearchEngines, SortBy } from '@/constants';
 
-export interface SearchEngineConfig {
+export interface CommonConfig {
+  // 需要排除的路径
+  excludePaths?: string[];
+  // 需要包含的路径
+  includePaths?: string[];
+}
+
+export interface SearchEngineConfig extends CommonConfig {
   enable?: boolean;
   // 文章数量
   count?: number;
@@ -48,4 +55,4 @@ export type SeoHexoConfig = {
   sortBy?: SortBy;
   fileRootPath?: string;
   CI?: CIConfig;
-};
+} & CommonConfig;

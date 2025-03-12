@@ -10,6 +10,9 @@ import {
   SearchEngines,
   SortBy,
 } from '@/constants';
+
+import { checkUrlPath } from './checkPath';
+
 import Hexo from '@/types/hexo';
 import { SeoHexoConfig } from '@/types';
 
@@ -23,6 +26,7 @@ export const descendingOrderPosts = (data: Hexo['Posts'], sortBy: SortBy) => {
 
 // 根据 count 获取 post urls
 export const getPostUrls = (
+  // pages 为 source/_posts 之外的文件夹的 path or permalink
   posts: Hexo['Site']['posts'],
   searchEnginConfig: SeoHexoConfig[SearchEngines],
 ) => {
@@ -37,16 +41,31 @@ export const getPostUrls = (
     };
   });
 
-  const { sortBy, count } = searchEnginConfig || {};
+  const { sortBy, count, includePaths, excludePaths } = searchEnginConfig || {};
   // get sortBy、count from root config
   const seoConfig = hexo.config[PLUGIN_NAME] as SeoHexoConfig;
 
-  const postUrls = descendingOrderPosts(
+  const realIncludePaths = includePaths || seoConfig.includePaths;
+  const realExcludePaths = excludePaths || seoConfig.excludePaths;
+
+  let postUrls = descendingOrderPosts(
     nextPosts,
     sortBy || seoConfig.sortBy || SortBy.CREATED,
-  )
-    ?.slice(0, count || seoConfig.count || undefined)
-    ?.map((post) => post.permalink);
+  )?.map((post) => post.permalink);
+
+  if (realIncludePaths?.length || realExcludePaths?.length) {
+    postUrls = postUrls.filter((url: string) => {
+      const path = new URL(url).pathname;
+      const checkInclude = checkUrlPath(realIncludePaths, path);
+      const checkExclude = checkUrlPath(realExcludePaths, path);
+
+      // include 规则优先 Exclude
+      return checkInclude || !checkExclude;
+    });
+  }
+
+  // 移至 include exclude 后
+  postUrls = postUrls?.slice(0, count || seoConfig.count || undefined);
 
   return postUrls?.join(CONTENT_SEPARATOR);
 };
