@@ -78,8 +78,10 @@ const CIGenerators = async (): Hexo['Return'] => {
   };
 
   if (!currentPlatformConfig) {
-    chalk.bgRed(
-      `${moduleName} error, no platform found, please check your config`,
+    console.log(
+      chalk.bgRed(
+        `${moduleName} error, no platform found, please check your config`,
+      ),
     );
     return;
   }

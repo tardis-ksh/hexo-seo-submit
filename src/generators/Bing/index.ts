@@ -28,8 +28,10 @@ const bingGenerator = async (local: Hexo['Site']): Hexo['Return'] => {
   };
 
   if (!result.data?.length) {
-    chalk.bgRed(
-      `${PLUGIN_NAME}: generator error, no post found, please check your config`,
+    console.log(
+      chalk.bgRed(
+        `${moduleName}: generator error, no post found, please check your config`,
+      ),
     );
     return;
   }
