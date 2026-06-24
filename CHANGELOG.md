@@ -1,3 +1,12 @@
+## [1.8.1](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.8.0...v1.8.1) (2026-06-24)
+
+
+### Bug Fixes
+
+* 抛出日志输出 ([e268925](https://github.com/tardis-ksh/hexo-seo-submit/commit/e2689250f7b34167a4d002f1bc831093b9f7abef))
+
+
+
 # [1.8.0](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.7.0...v1.8.0) (2025-03-12)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * add version control ([361ed5e](https://github.com/tardis-ksh/hexo-seo-submit/commit/361ed5ec0bcb26e1b7040fa9c36533c7791add44))
-
-
-
-## [1.4.1](https://github.com/tardis-ksh/hexo-seo-submit/compare/v1.4.0...v1.4.1) (2025-02-14)
-
-
-### Bug Fixes
-
-* use new version ([e65630d](https://github.com/tardis-ksh/hexo-seo-submit/commit/e65630d70974f8cc8bb143e9508f16f26b3e3cbb))
 
 
 
