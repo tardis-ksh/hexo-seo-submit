@@ -16,6 +16,12 @@ const bingDeploys = async (
 
   const { path, apiKey } = searchEngineConfig;
 
+  if (!apiKey || !path) {
+    return Promise.reject(
+      new Error(`${SearchEngines.BING} apiKey or path is required`),
+    );
+  }
+
   const originContent = await fsp.readFile(
     nodePath.join(hexo.public_dir, combineFilePath(path)),
     'utf8',
@@ -39,7 +45,7 @@ const bingDeploys = async (
     });
 
     return Promise.resolve(`${SearchEngines.BING}: push success`);
-  } catch (error) {
+  } catch (error: any) {
     return Promise.reject(new Error(error?.response?.data || error.message));
   }
 };

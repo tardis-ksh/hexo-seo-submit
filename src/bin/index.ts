@@ -45,7 +45,7 @@ program
           `success ${response?.data?.success}; ${response?.data?.remain} remain`,
         ),
       );
-    } catch (error) {
+    } catch (error: any) {
       console.error(chalk.red(error.response?.data?.message || error.message));
       process.exit(1);
     }
@@ -66,7 +66,7 @@ program
         apiKey: key,
       });
       console.log(chalk.bgGreen(`${SearchEngines.BING}: push success`));
-    } catch (error) {
+    } catch (error: any) {
       console.error(
         chalk.red(
           `${SearchEngines.BING} error: ${error?.response?.data || error.message}`,
@@ -126,7 +126,7 @@ program
         );
         process.exit(1);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.log(
         chalk.red(
           `${SearchEngines.GOOGLE} error: ${error?.response?.data.error.message || error.message}`,

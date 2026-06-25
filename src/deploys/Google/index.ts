@@ -14,6 +14,14 @@ const googleDeploys = async (
 
   const { path, accountKeysJSonFile, proxy } = searchEngineConfig;
 
+  if (!path || !accountKeysJSonFile) {
+    return Promise.reject(
+      new Error(
+        `${SearchEngines.GOOGLE} path or accountKeysJSonFile is required`,
+      ),
+    );
+  }
+
   try {
     const response = await BatchSubmit({
       file: nodePath.join(hexo.public_dir, combineFilePath(path)),
@@ -25,7 +33,7 @@ const googleDeploys = async (
       return Promise.resolve(`${SearchEngines.GOOGLE} push success`);
     }
     return Promise.reject(`${SearchEngines.GOOGLE} failed ${response?.data}`);
-  } catch (error) {
+  } catch (error: any) {
     return Promise.reject(error?.response?.data.error.message || error.message);
   }
 };

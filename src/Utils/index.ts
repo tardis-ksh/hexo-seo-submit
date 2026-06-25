@@ -70,9 +70,9 @@ export const getPostUrls = (
   return postUrls?.join(CONTENT_SEPARATOR);
 };
 
-export const combineFilePath = (filePath: string) => {
+export const combineFilePath = (filePath?: string) => {
   const pluginConfig = hexo.config[PLUGIN_NAME] as SeoHexoConfig;
-  return path.join(pluginConfig.fileRootPath ?? FILE_ROOT_PATH, filePath);
+  return path.join(pluginConfig.fileRootPath ?? FILE_ROOT_PATH, filePath!);
 };
 
 export const getSearchEngineConfig = <
@@ -96,6 +96,6 @@ export const getSiteDomain = () => {
   return hexo.config.url;
 };
 
-export const getFileContent = async (filePath) => {
+export const getFileContent = async (filePath: string) => {
   return await fsp.readFile(path.join(process.cwd(), filePath), 'utf8');
 };
