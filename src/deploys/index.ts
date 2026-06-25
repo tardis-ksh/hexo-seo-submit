@@ -54,7 +54,7 @@ const deploys = async (local: Hexo) => {
         throw new Error(result.reason);
       }
     });
-  } catch (error) {
+  } catch (error: any) {
     console.log(chalk.bgRed(`${moduleName} ${error.message}`));
   }
 };

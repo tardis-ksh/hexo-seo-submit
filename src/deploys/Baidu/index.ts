@@ -16,10 +16,20 @@ const baiduDeploys = async (
 
   const { path, token } = searchEngineConfig;
 
+  if (!path) {
+    return Promise.reject(new Error(`${SearchEngines.BAIDU} path is required`));
+  }
+
   const urls = await fsp.readFile(
     nodePath.join(hexo.public_dir, combineFilePath(path)),
     'utf8',
   );
+
+  if (!token) {
+    return Promise.reject(
+      new Error(`${SearchEngines.BAIDU} token is required`),
+    );
+  }
 
   try {
     const response: any = await submitUrlToEngine(urls, {
@@ -30,7 +40,7 @@ const baiduDeploys = async (
     return Promise.resolve(
       `${SearchEngines.BAIDU}: success ${response?.data?.success}; ${response?.data?.remain} remain`,
     );
-  } catch (error) {
+  } catch (error: any) {
     return Promise.reject(
       new Error(error.response?.data?.message || error.message),
     );

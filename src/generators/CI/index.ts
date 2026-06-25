@@ -10,7 +10,7 @@ import { SeoHexoConfig } from '@/types';
 import { combineFilePath, getSiteDomain } from '@/Utils';
 
 const moduleName = `${PLUGIN_NAME}[CI]:`;
-const getTemplateContent = async (path) => {
+const getTemplateContent = async (path: any) => {
   return await fsp.readFile(nodePath.join(__dirname, path), 'utf-8');
 };
 
@@ -74,7 +74,7 @@ const CIGenerators = async (): Hexo['Return'] => {
   };
   const currentPlatformConfig = {
     ...baseConfig,
-    ...platformConfig[CIConfig.platform],
+    ...(CIConfig.platform ? platformConfig[CIConfig.platform] : {}),
   };
 
   if (!currentPlatformConfig) {

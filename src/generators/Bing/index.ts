@@ -16,7 +16,7 @@ const bingGenerator = async (local: Hexo['Site']): Hexo['Return'] => {
 
   try {
     await checkSearchEngineConfig(searchConfig);
-  } catch (error) {
+  } catch (error: any) {
     console.log(chalk.bgRed.bold(`${moduleName}: ${error.message}`));
     return undefined;
   }

@@ -2,6 +2,7 @@
   "name": "hexo-seo-submit",
   "version": "1.8.1",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsup",
@@ -39,26 +40,26 @@
   "author": "tardis <kshao666@gmail.com> (https://ksh7.com)",
   "license": "MIT",
   "description": "Manual or automatic submit your site to search engines(google, bing, baidu). There are Github actions and coding jenkins available for CI",
-  "packageManager": "pnpm@10.6.2",
+  "packageManager": "pnpm@11.9.0",
   "devDependencies": {
-    "@commitlint/cli": "^19.8.0",
-    "@commitlint/config-conventional": "^19.8.0",
-    "@eslint/js": "^9.22.0",
-    "@types/hexo": "^3.8.12",
+    "@commitlint/cli": "^21.1.0",
+    "@commitlint/config-conventional": "^21.1.0",
+    "@eslint/js": "^10.0.1",
+    "@types/hexo": "^7.0.0",
     "@types/lodash.merge": "^4.6.9",
-    "@types/node": "^22.13.10",
-    "@typescript-eslint/parser": "^8.26.1",
-    "cpx2": "^8.0.0",
-    "eslint": "^9.22.0",
-    "eslint-config-prettier": "^10.1.1",
-    "eslint-plugin-prettier": "^5.2.3",
-    "globals": "^16.0.0",
+    "@types/node": "^26.0.0",
+    "@typescript-eslint/parser": "^8.62.0",
+    "cpx2": "^9.0.0",
+    "eslint": "^10.5.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "globals": "^17.7.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.3",
-    "prettier": "^3.5.3",
-    "tsup": "^8.4.0",
-    "typescript": "^5.8.2",
-    "typescript-eslint": "^8.26.1"
+    "lint-staged": "^17.0.8",
+    "prettier": "^3.8.4",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.62.0"
   },
   "lint-staged": {
     "src/*.{ts,js,json,md}": [
@@ -66,15 +67,17 @@
       "pnpm run lint"
     ]
   },
+  "peerDependencies": {
+    "hexo": ">=7",
+    "lodash.merge": ">=4",
+    "chalk": "5",
+    "axios": ">=1.10",
+    "https-proxy-agent": "9"
+  },
   "dependencies": {
-    "axios": "^1.8.2",
-    "chalk": "^5.4.1",
-    "commander": "^13.1.0",
-    "google-auth-library": "^9.15.1",
-    "handlebars": "^4.7.8",
-    "hexo": "^7.3.0",
-    "https-proxy-agent": "^7.0.6",
-    "lodash.merge": "^4.6.2",
+    "commander": "^15.0.0",
+    "google-auth-library": "^10.7.0",
+    "handlebars": "^4.7.9",
     "wildcard-match": "^5.1.4"
   }
 }

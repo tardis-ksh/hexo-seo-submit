@@ -12,7 +12,7 @@ const batchSubmit = async (config: BatchSubmitConfig) => {
   // check config
   try {
     await checkGoogleConfig(config);
-  } catch (error) {
+  } catch (error: any) {
     return Promise.reject(error.message);
   }
 
@@ -26,7 +26,7 @@ const batchSubmit = async (config: BatchSubmitConfig) => {
   }
   const secretsConfig = JSON.parse(secretsJson || '') as GoogleAccountKeysJson;
 
-  const urlContent = await fsp.readFile(file, 'utf8');
+  const urlContent = await fsp.readFile(file!, 'utf8');
 
   if (!urlContent) {
     return Promise.reject(new Error('no url to submit'));
